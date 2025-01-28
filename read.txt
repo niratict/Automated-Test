@@ -1,0 +1,29 @@
+วิธีใช้งาน:
+
+npm run report:clean     # ลบ reports เก่า (ถ้าต้องการ)
+npm run cy:run          # รันเทสต์
+npm run report:merge    # รวม reports
+npm run report:generate # สร้าง HTML report
+
+รันเทสต์เฉพาะไฟล์:
+npm run cy:run:file "cypress/e2e/1-getting-started/todo.cy.js"
+# หรือ
+npx cypress run --spec "cypress/e2e/todo/todo.cy.js"
+
+รันทั้ง folder:
+# รันทุกไฟล์ใน folder todo
+npm run cy:run:todo
+# รันทุกไฟล์ใน folder auth
+npm run cy:run:auth
+
+รันหลายไฟล์พร้อมกัน:
+npm run cy:run:file "cypress/e2e/todo/todo.cy.js,cypress/e2e/auth/login.cy.js"
+
+รันด้วยรูปแบบ glob pattern:
+# รันทุกไฟล์ที่มีคำว่า login
+npm run cy:run:file "cypress/e2e/**/*login*.cy.js"
+
+คำอธิบายเพิ่มเติม:
+cy:run:file: สำหรับรันเฉพาะไฟล์ที่ระบุ
+cy:run:todo: รันทุกไฟล์ใน folder todo
+cy:run:auth: รันทุกไฟล์ใน folder auth
