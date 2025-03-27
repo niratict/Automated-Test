@@ -1,0 +1,322 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 8,
+    "passes": 8,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-27T13:49:04.983Z",
+    "end": "2025-03-27T13:49:15.471Z",
+    "duration": 10488,
+    "testsRegistered": 8,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "315e324a-f052-4ba4-b428-f7d475f8abcd",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SPMS\\spms_001.cy.js",
+      "file": "cypress\\e2e\\SPMS\\spms_001.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c6623ae2-a1e9-44b8-bf30-c2cc87d6e853",
+          "title": "การทดสอบหน้าเข้าสู่ระบบ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "5f56f656-a7df-40bf-b199-666b3fc85333",
+              "title": "การทดสอบกระบวนการเข้าสู่ระบบ",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_01_001 ทดสอบการ Login สำเร็จ",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การทดสอบกระบวนการเข้าสู่ระบบ TS_SPMS_01_001 ทดสอบการ Login สำเร็จ",
+                  "timedOut": null,
+                  "duration": 3937,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// กรอกข้อมูลถูกต้อง\ncy.get('[data-cy=\"login-email\"]').type(validCredentials.email);\ncy.get('[data-cy=\"login-password\"]').type(validCredentials.password);\n// กดปุ่มเข้าสู่ระบบ\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบว่านำทางไปยังหน้าหลักหลังจากเข้าสู่ระบบสำเร็จ\ncy.url().should(\"include\", \"/mainpage\");\n// สามารถตรวจสอบเพิ่มเติมว่ามี element ที่แสดงว่าเข้าสู่ระบบสำเร็จ เช่น ชื่อผู้ใช้\n// cy.get('[data-cy=\"user-welcome\"]').should('contain', 'ยินดีต้อนรับ');",
+                  "err": {},
+                  "uuid": "4d1048a4-4599-4b2a-ad90-ea54f4e7775b",
+                  "parentUUID": "5f56f656-a7df-40bf-b199-666b3fc85333",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_01_002 ทดสอบกรณีใส่รหัสผ่านผิด",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การทดสอบกระบวนการเข้าสู่ระบบ TS_SPMS_01_002 ทดสอบกรณีใส่รหัสผ่านผิด",
+                  "timedOut": null,
+                  "duration": 1403,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// กรอกอีเมลถูกต้องแต่รหัสผ่านผิด\ncy.get('[data-cy=\"login-email\"]').type(validCredentials.email);\ncy.get('[data-cy=\"login-password\"]').type(invalidCredentials.password);\n// กดปุ่มเข้าสู่ระบบ\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบการแสดงข้อความแจ้งเตือน\ncy.get('[data-cy=\"login-error\"]').should(\"be.visible\").and(\"contain\", \"รหัสผ่านไม่ถูกต้อง\");\n// ตรวจสอบว่ายังคงอยู่ที่หน้า login\ncy.url().should(\"include\", \"/login\");",
+                  "err": {},
+                  "uuid": "638e1d37-6c8a-4eed-b7e9-21777c53b22d",
+                  "parentUUID": "5f56f656-a7df-40bf-b199-666b3fc85333",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_01_003 ทดสอบกรณีใส่อีเมลผิด",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การทดสอบกระบวนการเข้าสู่ระบบ TS_SPMS_01_003 ทดสอบกรณีใส่อีเมลผิด",
+                  "timedOut": null,
+                  "duration": 866,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// กรอกอีเมลผิดแต่รหัสผ่านถูกต้อง\ncy.get('[data-cy=\"login-email\"]').type(invalidCredentials.email);\ncy.get('[data-cy=\"login-password\"]').type(validCredentials.password);\n// กดปุ่มเข้าสู่ระบบ\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบการแสดงข้อความแจ้งเตือน\ncy.get('[data-cy=\"login-error\"]').should(\"be.visible\").and(\"contain\", \"อีเมลไม่ถูกต้อง\");\n// ตรวจสอบว่ายังคงอยู่ที่หน้า login\ncy.url().should(\"include\", \"/login\");",
+                  "err": {},
+                  "uuid": "2fa4b983-298f-44dd-80b3-3701b4613875",
+                  "parentUUID": "5f56f656-a7df-40bf-b199-666b3fc85333",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_01_004 ทดสอบกรณีเว้นช่องว่าง (email หรือ password)",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การทดสอบกระบวนการเข้าสู่ระบบ TS_SPMS_01_004 ทดสอบกรณีเว้นช่องว่าง (email หรือ password)",
+                  "timedOut": null,
+                  "duration": 1347,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// กรณีเว้นว่าง email และกดเข้าสู่ระบบ\ncy.get('[data-cy=\"login-password\"]').type(validCredentials.password);\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบการแสดงข้อความ validation จาก HTML5\ncy.get('[data-cy=\"login-email\"]:invalid').should(\"exist\");\n// เคลียร์ข้อมูลและทดสอบกรณีเว้นว่างรหัสผ่าน\ncy.get('[data-cy=\"login-password\"]').clear();\ncy.get('[data-cy=\"login-email\"]').type(validCredentials.email);\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบการแสดงข้อความ validation จาก HTML5\ncy.get('[data-cy=\"login-password\"]:invalid').should(\"exist\");\n// เคลียร์ข้อมูลและทดสอบกรณีเว้นว่างทั้งสองฟิลด์\ncy.get('[data-cy=\"login-email\"]').clear();\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบว่าฟอร์มไม่ถูกส่ง\ncy.url().should(\"include\", \"/login\");",
+                  "err": {},
+                  "uuid": "ba5c78b9-dba4-45e6-8b1d-f5645044d8f1",
+                  "parentUUID": "5f56f656-a7df-40bf-b199-666b3fc85333",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "4d1048a4-4599-4b2a-ad90-ea54f4e7775b",
+                "638e1d37-6c8a-4eed-b7e9-21777c53b22d",
+                "2fa4b983-298f-44dd-80b3-3701b4613875",
+                "ba5c78b9-dba4-45e6-8b1d-f5645044d8f1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 7553,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "96bdeb94-4bfe-4d5d-9d90-d0cf20f2acee",
+              "title": "การตรวจสอบองค์ประกอบ UI",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_01_005 ทดสอบ UI ว่ามีองค์ประกอบที่ถูกต้อง",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การตรวจสอบองค์ประกอบ UI TS_SPMS_01_005 ทดสอบ UI ว่ามีองค์ประกอบที่ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 204,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบองค์ประกอบหลัก\ncy.get('[data-cy=\"login-logo\"]').should(\"be.visible\");\ncy.get('[data-cy=\"login-title\"]').should(\"be.visible\").and(\"contain\", \"Project Management System\");\ncy.get('[data-cy=\"login-subtitle\"]').should(\"be.visible\").and(\"contain\", \"ลงชื่อเข้าใช้บัญชีของคุณเพื่อเริ่มใช้งานระบบ\");\n// ตรวจสอบฟอร์มและฟิลด์ข้อมูล\ncy.get('[data-cy=\"login-email-label\"]').should(\"be.visible\").and(\"contain\", \"อีเมล\");\ncy.get('[data-cy=\"login-email\"]').should(\"be.visible\").and(\"have.attr\", \"placeholder\", \"yourname@example.com\");\ncy.get('[data-cy=\"login-password-label\"]').should(\"be.visible\").and(\"contain\", \"รหัสผ่าน\");\ncy.get('[data-cy=\"login-password\"]').should(\"be.visible\").and(\"have.attr\", \"type\", \"password\");\ncy.get('[data-cy=\"login-toggle-password\"]').should(\"be.visible\");\ncy.get('[data-cy=\"login-submit\"]').should(\"be.visible\").and(\"contain\", \"เข้าสู่ระบบ\");",
+                  "err": {},
+                  "uuid": "bd66e74a-f31a-4661-8be7-3824f3f907c6",
+                  "parentUUID": "96bdeb94-4bfe-4d5d-9d90-d0cf20f2acee",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_01_006 ทดสอบการกดปุ่มแสดง/ซ่อนรหัสผ่าน",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การตรวจสอบองค์ประกอบ UI TS_SPMS_01_006 ทดสอบการกดปุ่มแสดง/ซ่อนรหัสผ่าน",
+                  "timedOut": null,
+                  "duration": 425,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่าฟิลด์รหัสผ่านเริ่มต้นเป็นประเภท password (ซ่อน)\ncy.get('[data-cy=\"login-password\"]').should(\"have.attr\", \"type\", \"password\");\n// กดปุ่มแสดงรหัสผ่าน\ncy.get('[data-cy=\"login-toggle-password\"]').click();\n// ตรวจสอบว่าฟิลด์รหัสผ่านเปลี่ยนเป็นประเภท text (แสดง)\ncy.get('[data-cy=\"login-password\"]').should(\"have.attr\", \"type\", \"text\");\n// กดปุ่มซ่อนรหัสผ่าน\ncy.get('[data-cy=\"login-toggle-password\"]').click();\n// ตรวจสอบว่าฟิลด์รหัสผ่านเปลี่ยนกลับเป็นประเภท password (ซ่อน)\ncy.get('[data-cy=\"login-password\"]').should(\"have.attr\", \"type\", \"password\");",
+                  "err": {},
+                  "uuid": "59457d90-3e8b-4870-b692-269398da6a8c",
+                  "parentUUID": "96bdeb94-4bfe-4d5d-9d90-d0cf20f2acee",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bd66e74a-f31a-4661-8be7-3824f3f907c6",
+                "59457d90-3e8b-4870-b692-269398da6a8c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 629,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "97341be4-5ce9-4b45-b1a6-2aef04fcd2fe",
+              "title": "การทดสอบสถานะการโหลด",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_01_007 ทดสอบการแสดงสถานะการโหลดระหว่างการเข้าสู่ระบบ",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การทดสอบสถานะการโหลด TS_SPMS_01_007 ทดสอบการแสดงสถานะการโหลดระหว่างการเข้าสู่ระบบ",
+                  "timedOut": null,
+                  "duration": 816,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// กรอกข้อมูลและส่งฟอร์ม\ncy.get('[data-cy=\"login-email\"]').type(validCredentials.email);\ncy.get('[data-cy=\"login-password\"]').type(validCredentials.password);\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบว่าปุ่มแสดงสถานะการโหลด\ncy.get('[data-cy=\"login-submit\"]').should(\"contain\", \"กำลังเข้าสู่ระบบ...\");\ncy.get('[data-cy=\"login-submit\"]').should(\"be.disabled\");\ncy.get('[data-cy=\"login-submit\"] svg.animate-spin').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "58dc7542-6c60-41bd-bcaf-d2edb6e9b0c2",
+                  "parentUUID": "97341be4-5ce9-4b45-b1a6-2aef04fcd2fe",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "58dc7542-6c60-41bd-bcaf-d2edb6e9b0c2"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 816,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "72e5f633-6781-449a-86f3-8cc811915bac",
+              "title": "การตรวจสอบรูปแบบข้อมูล",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_01_008 ทดสอบการตรวจสอบรูปแบบอีเมล",
+                  "fullTitle": "การทดสอบหน้าเข้าสู่ระบบ การตรวจสอบรูปแบบข้อมูล TS_SPMS_01_008 ทดสอบการตรวจสอบรูปแบบอีเมล",
+                  "timedOut": null,
+                  "duration": 1191,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ทดสอบรูปแบบอีเมลที่ไม่ถูกต้อง\ncy.get('[data-cy=\"login-email\"]').type(\"invalidemailformat\");\ncy.get('[data-cy=\"login-password\"]').type(validCredentials.password);\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบการแสดงข้อความ validation จาก HTML5\ncy.get('[data-cy=\"login-email\"]:invalid').should(\"exist\");\n// เคลียร์และทดสอบรูปแบบอีเมลที่ถูกต้อง\ncy.get('[data-cy=\"login-email\"]').clear().type(\"valid@example.com\");\ncy.get('[data-cy=\"login-email\"]:invalid').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "7e799343-1b7d-4ff0-8a0e-9242fa0097fb",
+                  "parentUUID": "72e5f633-6781-449a-86f3-8cc811915bac",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7e799343-1b7d-4ff0-8a0e-9242fa0097fb"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1191,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

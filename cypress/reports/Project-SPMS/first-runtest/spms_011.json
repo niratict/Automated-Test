@@ -1,0 +1,646 @@
+{
+  "stats": {
+    "suites": 9,
+    "tests": 19,
+    "passes": 11,
+    "pending": 0,
+    "failures": 8,
+    "start": "2025-03-27T05:02:47.896Z",
+    "end": "2025-03-27T05:04:14.194Z",
+    "duration": 86298,
+    "testsRegistered": 19,
+    "passPercent": 57.89473684210527,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "98f3275a-1f27-4579-94f4-fab57ee1a2e8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SPMS\\spms_011.cy.js",
+      "file": "cypress\\e2e\\SPMS\\spms_011.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "473c749c-594c-48ac-9629-d9a6c6435cf9",
+          "title": "หน้าจัดการโปรไฟล์",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "44487028-c21d-4d31-91c7-b6a1b06b96ec",
+              "title": "ทดสอบการแสดงผลองค์ประกอบพื้นฐานของหน้าโปรไฟล์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_001 ตรวจสอบการแสดงองค์ประกอบพื้นฐานของหน้า Profile",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ ทดสอบการแสดงผลองค์ประกอบพื้นฐานของหน้าโปรไฟล์ TS_SPMS_11_001 ตรวจสอบการแสดงองค์ประกอบพื้นฐานของหน้า Profile",
+                  "timedOut": null,
+                  "duration": 2817,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่าหน้าโปรไฟล์แสดงผลถูกต้อง\ncy.get('[data-cy=\"profile-page\"]').should(\"be.visible\");\ncy.get('[data-cy=\"profile-role\"]').should(\"be.visible\");\ncy.get('[data-cy=\"profile-image\"]').should(\"be.visible\");\ncy.get('[data-cy=\"profile-name\"]').should(\"be.visible\");\ncy.get('[data-cy=\"profile-email\"]').should(\"be.visible\");\ncy.get('[data-cy=\"profile-created-at\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "7568ffcd-245c-4991-b2c3-1afb622f0463",
+                  "parentUUID": "44487028-c21d-4d31-91c7-b6a1b06b96ec",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_002 ตรวจสอบว่าอีเมลที่แสดงตรงกับอีเมลที่ใช้เข้าสู่ระบบ",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ ทดสอบการแสดงผลองค์ประกอบพื้นฐานของหน้าโปรไฟล์ TS_SPMS_11_002 ตรวจสอบว่าอีเมลที่แสดงตรงกับอีเมลที่ใช้เข้าสู่ระบบ",
+                  "timedOut": null,
+                  "duration": 2007,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"profile-email\"]').should(\"contain\", testUser.email);",
+                  "err": {},
+                  "uuid": "0adcf9c2-cd49-41ae-a075-32a77a731346",
+                  "parentUUID": "44487028-c21d-4d31-91c7-b6a1b06b96ec",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7568ffcd-245c-4991-b2c3-1afb622f0463",
+                "0adcf9c2-cd49-41ae-a075-32a77a731346"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 4824,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "afdff97b-272f-4254-9969-02331ec9daa2",
+              "title": "การทดสอบฟังก์ชันการแก้ไขโปรไฟล์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_003 ตรวจสอบการเปิดโหมดแก้ไขโปรไฟล์",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการแก้ไขโปรไฟล์ TS_SPMS_11_003 ตรวจสอบการเปิดโหมดแก้ไขโปรไฟล์",
+                  "timedOut": null,
+                  "duration": 2373,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มแก้ไขโปรไฟล์\ncy.get('[data-cy=\"edit-profile-btn\"]').click();\n// ตรวจสอบว่าฟอร์มแก้ไขโปรไฟล์ปรากฏขึ้น\ncy.get('[data-cy=\"name-input\"]').should(\"be.visible\");\ncy.get('[data-cy=\"email-input\"]').should(\"be.visible\").and(\"be.disabled\");\ncy.get('[data-cy=\"save-profile-btn\"]').should(\"be.visible\");\ncy.get('[data-cy=\"cancel-edit-btn\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "d29bdfa1-7435-48ed-8c4c-0da78038ab86",
+                  "parentUUID": "afdff97b-272f-4254-9969-02331ec9daa2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_004 ตรวจสอบการยกเลิกการแก้ไขโปรไฟล์",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการแก้ไขโปรไฟล์ TS_SPMS_11_004 ตรวจสอบการยกเลิกการแก้ไขโปรไฟล์",
+                  "timedOut": null,
+                  "duration": 2908,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มแก้ไขโปรไฟล์\ncy.get('[data-cy=\"edit-profile-btn\"]').click();\n// บันทึกชื่อปัจจุบันเพื่อเปรียบเทียบ\ncy.get('[data-cy=\"profile-name\"]').invoke(\"text\").as(\"originalName\");\n// ป้อนชื่อใหม่ในฟอร์ม\ncy.get('[data-cy=\"name-input\"]').clear().type(\"Test Name Changed\");\n// คลิกปุ่มยกเลิก\ncy.get('[data-cy=\"cancel-edit-btn\"]').click();\n// ตรวจสอบว่าโหมดแก้ไขถูกปิด\ncy.get('[data-cy=\"name-input\"]').should(\"not.exist\");\n// ตรวจสอบว่าชื่อไม่ถูกเปลี่ยนแปลง\ncy.get(\"@originalName\").then(originalName => {\n  cy.get('[data-cy=\"profile-name\"]').should(\"have.text\", originalName);\n});",
+                  "err": {},
+                  "uuid": "97b1aba5-db01-40b8-9a45-4fc3b89f02fc",
+                  "parentUUID": "afdff97b-272f-4254-9969-02331ec9daa2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_005 ตรวจสอบการบันทึกโปรไฟล์โดยใช้ชื่อที่ถูกต้อง",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการแก้ไขโปรไฟล์ TS_SPMS_11_005 ตรวจสอบการบันทึกโปรไฟล์โดยใช้ชื่อที่ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 8318,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มแก้ไขโปรไฟล์\ncy.get('[data-cy=\"edit-profile-btn\"]').click();\n// ป้อนชื่อใหม่ที่ถูกต้อง\nconst newName = \"ทดสอบชื่อใหม่ \" + Date.now();\ncy.get('[data-cy=\"name-input\"]').clear().type(newName);\n// สร้าง stub สำหรับ API request\ncy.intercept(\"PUT\", \"/api/profile\", {\n  statusCode: 200,\n  body: {\n    success: true,\n    message: \"Profile updated successfully\"\n  }\n}).as(\"updateProfile\");\n// คลิกปุ่มบันทึก\ncy.get('[data-cy=\"save-profile-btn\"]').click();\n// รอให้ API request เสร็จสิ้น\ncy.wait(\"@updateProfile\");\n// ตรวจสอบว่าชื่อถูกอัปเดตในหน้า UI\ncy.get('[data-cy=\"profile-name\"]').should(\"have.text\", newName);",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `updateProfile`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                    "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `updateProfile`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75089:18)\n    at Object.errByPath (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75143:10)\n    at checkForXhr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134450:84)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134476:28)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\nat Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)",
+                    "diff": null
+                  },
+                  "uuid": "20098d05-f7cb-4dfc-b69f-a44a2e7fded7",
+                  "parentUUID": "afdff97b-272f-4254-9969-02331ec9daa2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_006 ตรวจสอบการแสดงข้อผิดพลาดเมื่อบันทึกโปรไฟล์โดยใช้ชื่อที่ไม่ถูกต้อง",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการแก้ไขโปรไฟล์ TS_SPMS_11_006 ตรวจสอบการแสดงข้อผิดพลาดเมื่อบันทึกโปรไฟล์โดยใช้ชื่อที่ไม่ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 2720,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มแก้ไขโปรไฟล์\ncy.get('[data-cy=\"edit-profile-btn\"]').click();\n// ป้อนชื่อที่ไม่ถูกต้อง (เช่น ป่อนค่าว่าง)\ncy.get('[data-cy=\"name-input\"]').clear();\n// คลิกปุ่มบันทึก\ncy.get('[data-cy=\"save-profile-btn\"]').click();\n// ตรวจสอบว่ามีข้อความแสดงข้อผิดพลาด\ncy.get('[data-cy=\"name-error\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "5b1633c7-bc74-4fc6-939a-e5f618bf56a0",
+                  "parentUUID": "afdff97b-272f-4254-9969-02331ec9daa2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d29bdfa1-7435-48ed-8c4c-0da78038ab86",
+                "97b1aba5-db01-40b8-9a45-4fc3b89f02fc",
+                "5b1633c7-bc74-4fc6-939a-e5f618bf56a0"
+              ],
+              "failures": [
+                "20098d05-f7cb-4dfc-b69f-a44a2e7fded7"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 16319,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "3fb98a65-98ee-41fc-9e42-99c24238cd07",
+              "title": "การทดสอบฟังก์ชันการเปลี่ยนรหัสผ่าน",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_007 ตรวจสอบการเปิดโมดัลเปลี่ยนรหัสผ่าน",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการเปลี่ยนรหัสผ่าน TS_SPMS_11_007 ตรวจสอบการเปิดโมดัลเปลี่ยนรหัสผ่าน",
+                  "timedOut": null,
+                  "duration": 6476,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรหัสผ่าน\ncy.get('[data-cy=\"change-password-btn\"]').click();\n// ตรวจสอบว่าโมดัลเปลี่ยนรหัสผ่านปรากฏขึ้น\ncy.get('[data-cy=\"password-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"current-password-input\"]').should(\"be.visible\");\ncy.get('[data-cy=\"new-password-input\"]').should(\"be.visible\");\ncy.get('[data-cy=\"confirm-password-input\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"password-modal\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"password-modal\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_011.cy.js:133:43)",
+                    "diff": null
+                  },
+                  "uuid": "00bb3ae2-4dab-4750-878a-0b226dc997a8",
+                  "parentUUID": "3fb98a65-98ee-41fc-9e42-99c24238cd07",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_008 ตรวจสอบการยกเลิกการเปลี่ยนรหัสผ่าน",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการเปลี่ยนรหัสผ่าน TS_SPMS_11_008 ตรวจสอบการยกเลิกการเปลี่ยนรหัสผ่าน",
+                  "timedOut": null,
+                  "duration": 3159,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรหัสผ่าน\ncy.get('[data-cy=\"change-password-btn\"]').click();\n// ป้อนข้อมูลในฟอร์ม\ncy.get('[data-cy=\"current-password-input\"]').type(\"123456\");\ncy.get('[data-cy=\"new-password-input\"]').type(\"newpassword123\");\ncy.get('[data-cy=\"confirm-password-input\"]').type(\"newpassword123\");\n// คลิกปุ่มยกเลิก\ncy.get('[data-cy=\"cancel-password-change\"]').click();\n// ตรวจสอบว่าโมดัลถูกปิด\ncy.get('[data-cy=\"password-modal\"]').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "25f550b9-26f4-44c6-a29f-0588d97fa65f",
+                  "parentUUID": "3fb98a65-98ee-41fc-9e42-99c24238cd07",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_009 ตรวจสอบการเปลี่ยนรหัสผ่านสำเร็จ",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการเปลี่ยนรหัสผ่าน TS_SPMS_11_009 ตรวจสอบการเปลี่ยนรหัสผ่านสำเร็จ",
+                  "timedOut": null,
+                  "duration": 8618,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรหัสผ่าน\ncy.get('[data-cy=\"change-password-btn\"]').click();\n// ป้อนข้อมูลในฟอร์ม\ncy.get('[data-cy=\"current-password-input\"]').type(\"123456\");\ncy.get('[data-cy=\"new-password-input\"]').type(\"newpassword123\");\ncy.get('[data-cy=\"confirm-password-input\"]').type(\"newpassword123\");\n// สร้าง stub สำหรับ API request\ncy.intercept(\"PUT\", \"/api/profile/password\", {\n  statusCode: 200,\n  body: {\n    success: true,\n    message: \"Password updated successfully\"\n  }\n}).as(\"updatePassword\");\n// คลิกปุ่มยืนยัน\ncy.get('[data-cy=\"confirm-password-change\"]').click();\n// รอให้ API request เสร็จสิ้น\ncy.wait(\"@updatePassword\");\n// ตรวจสอบว่าโมดัลถูกปิด\ncy.get('[data-cy=\"password-modal\"]').should(\"not.exist\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `updatePassword`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                    "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `updatePassword`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75089:18)\n    at Object.errByPath (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75143:10)\n    at checkForXhr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134450:84)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134476:28)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "a80c59a0-4a13-4d6e-85ba-c4dda372df2a",
+                  "parentUUID": "3fb98a65-98ee-41fc-9e42-99c24238cd07",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_010 ตรวจสอบการแสดงข้อผิดพลาดเมื่อรหัสผ่านปัจจุบันไม่ถูกต้อง",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการเปลี่ยนรหัสผ่าน TS_SPMS_11_010 ตรวจสอบการแสดงข้อผิดพลาดเมื่อรหัสผ่านปัจจุบันไม่ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 8931,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรหัสผ่าน\ncy.get('[data-cy=\"change-password-btn\"]').click();\n// ป้อนข้อมูลในฟอร์มโดยใช้รหัสผ่านปัจจุบันที่ไม่ถูกต้อง\ncy.get('[data-cy=\"current-password-input\"]').type(\"wrongpassword\");\ncy.get('[data-cy=\"new-password-input\"]').type(\"newpassword123\");\ncy.get('[data-cy=\"confirm-password-input\"]').type(\"newpassword123\");\n// สร้าง stub สำหรับ API request\ncy.intercept(\"PUT\", \"/api/profile/password\", {\n  statusCode: 400,\n  body: {\n    success: false,\n    message: \"Current password is incorrect\"\n  }\n}).as(\"failedUpdatePassword\");\n// คลิกปุ่มยืนยัน\ncy.get('[data-cy=\"confirm-password-change\"]').click();\n// รอให้ API request เสร็จสิ้น\ncy.wait(\"@failedUpdatePassword\");\n// ตรวจสอบว่ามีข้อความแสดงข้อผิดพลาด\ncy.get('[data-cy=\"current-password-error\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `failedUpdatePassword`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                    "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `failedUpdatePassword`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75089:18)\n    at Object.errByPath (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75143:10)\n    at checkForXhr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134450:84)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134476:28)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "b96f333d-9eff-4862-b387-0828632e2922",
+                  "parentUUID": "3fb98a65-98ee-41fc-9e42-99c24238cd07",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_011 ตรวจสอบการแสดงข้อผิดพลาดเมื่อรหัสผ่านใหม่และการยืนยันไม่ตรงกัน",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการเปลี่ยนรหัสผ่าน TS_SPMS_11_011 ตรวจสอบการแสดงข้อผิดพลาดเมื่อรหัสผ่านใหม่และการยืนยันไม่ตรงกัน",
+                  "timedOut": null,
+                  "duration": 3379,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรหัสผ่าน\ncy.get('[data-cy=\"change-password-btn\"]').click();\n// ป้อนข้อมูลในฟอร์มโดยรหัสผ่านใหม่และการยืนยันไม่ตรงกัน\ncy.get('[data-cy=\"current-password-input\"]').type(\"123456\");\ncy.get('[data-cy=\"new-password-input\"]').type(\"newpassword123\");\ncy.get('[data-cy=\"confirm-password-input\"]').type(\"differentpassword\");\n// คลิกปุ่มยืนยัน\ncy.get('[data-cy=\"confirm-password-change\"]').click();\n// ตรวจสอบว่ามีข้อความแสดงข้อผิดพลาด\ncy.get('[data-cy=\"confirm-password-error\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "aeddfa95-5614-42b6-892f-eba12c844876",
+                  "parentUUID": "3fb98a65-98ee-41fc-9e42-99c24238cd07",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "25f550b9-26f4-44c6-a29f-0588d97fa65f",
+                "aeddfa95-5614-42b6-892f-eba12c844876"
+              ],
+              "failures": [
+                "00bb3ae2-4dab-4750-878a-0b226dc997a8",
+                "a80c59a0-4a13-4d6e-85ba-c4dda372df2a",
+                "b96f333d-9eff-4862-b387-0828632e2922"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 30563,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "47b26389-0b59-424d-a1da-0490bd5b6d21",
+              "title": "การทดสอบฟังก์ชันการจัดการรูปโปรไฟล์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_012 ตรวจสอบการเปิดโมดัลอัปโหลดรูปโปรไฟล์",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการจัดการรูปโปรไฟล์ TS_SPMS_11_012 ตรวจสอบการเปิดโมดัลอัปโหลดรูปโปรไฟล์",
+                  "timedOut": null,
+                  "duration": 6607,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรูปโปรไฟล์\ncy.get('[data-cy=\"change-image-btn\"]').click();\n// ตรวจสอบว่าโมดัลอัปโหลดรูปภาพปรากฏขึ้น\ncy.get('[data-cy=\"upload-image-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"choose-image-btn\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"upload-image-modal\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"upload-image-modal\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_011.cy.js:231:47)",
+                    "diff": null
+                  },
+                  "uuid": "2442cd67-2bb5-46df-8a18-16d2b22c8fd6",
+                  "parentUUID": "47b26389-0b59-424d-a1da-0490bd5b6d21",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_013 ตรวจสอบการอัปโหลดรูปโปรไฟล์",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการจัดการรูปโปรไฟล์ TS_SPMS_11_013 ตรวจสอบการอัปโหลดรูปโปรไฟล์",
+                  "timedOut": null,
+                  "duration": 2493,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เตรียมไฟล์สำหรับการอัปโหลด\ncy.fixture(\"test-image.jpg\", \"binary\").then(fileContent => {\n  cy.get('[data-cy=\"change-image-btn\"]').click();\n  // จำลองการอัปโหลดไฟล์\n  cy.get('[data-cy=\"image-input\"]').attachFile({\n    fileContent,\n    fileName: \"test-image.jpg\",\n    mimeType: \"image/jpeg\"\n  });\n  // ตรวจสอบว่าพรีวิวรูปภาพปรากฏขึ้น\n  cy.get('[data-cy=\"new-image-preview\"]').should(\"be.visible\");\n  // สร้าง stub สำหรับ API request\n  cy.intercept(\"POST\", \"/api/profile/image\", {\n    statusCode: 200,\n    body: {\n      success: true,\n      message: \"Image uploaded successfully\"\n    }\n  }).as(\"uploadImage\");\n  // คลิกปุ่มบันทึกรูปภาพ\n  cy.get('[data-cy=\"confirm-upload-btn\"]').click();\n  // รอให้ API request เสร็จสิ้น\n  cy.wait(\"@uploadImage\");\n  // ตรวจสอบว่าโมดัลถูกปิด\n  cy.get('[data-cy=\"upload-image-modal\"]').should(\"not.exist\");\n});",
+                  "err": {
+                    "message": "TypeError: cy.get(...).attachFile is not a function",
+                    "estack": "TypeError: cy.get(...).attachFile is not a function\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_011.cy.js:241:42)\n    at getRet (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:118320:20)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at Context.thenFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:118331:66)\n    at Context.then (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:118582:21)\n    at wrapped (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:137197:19)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:143121:15)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "cf61102f-6593-4e93-89ef-dcae1e8b76fb",
+                  "parentUUID": "47b26389-0b59-424d-a1da-0490bd5b6d21",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_014 ตรวจสอบการลบรูปโปรไฟล์",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการจัดการรูปโปรไฟล์ TS_SPMS_11_014 ตรวจสอบการลบรูปโปรไฟล์",
+                  "timedOut": null,
+                  "duration": 2538,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรูปโปรไฟล์\ncy.get('[data-cy=\"change-image-btn\"]').click();\n// ตรวจเงื่อนไขว่ามีรูปโปรไฟล์อยู่แล้วหรือไม่\ncy.get(\"body\").then($body => {\n  // หากมีปุ่มลบรูปภาพในโมดัล แสดงว่ามีรูปโปรไฟล์อยู่แล้ว\n  if ($body.find('[data-cy=\"delete-image-from-modal-btn\"]').length > 0) {\n    // คลิกปุ่มลบรูปภาพ\n    cy.get('[data-cy=\"delete-image-from-modal-btn\"]').click();\n    // ตรวจสอบว่าโมดัลยืนยันการลบปรากฏขึ้น\n    cy.get('[data-cy=\"delete-image-confirm-modal\"]').should(\"be.visible\");\n    // สร้าง stub สำหรับ API request\n    cy.intercept(\"DELETE\", \"/api/profile/image\", {\n      statusCode: 200,\n      body: {\n        success: true,\n        message: \"Image deleted successfully\"\n      }\n    }).as(\"deleteImage\");\n    // คลิกปุ่มยืนยันการลบ\n    cy.get('[data-cy=\"confirm-delete-btn\"]').click();\n    // รอให้ API request เสร็จสิ้น\n    cy.wait(\"@deleteImage\");\n    // ตรวจสอบว่าโมดัลยืนยันการลบถูกปิด\n    cy.get('[data-cy=\"delete-image-confirm-modal\"]').should(\"not.exist\");\n  } else {\n    // ข้ามการทดสอบหากไม่มีรูปโปรไฟล์\n    cy.log(\"No profile image to delete, skipping this test\");\n  }\n});",
+                  "err": {},
+                  "uuid": "a665eabe-bcc2-49a4-b85a-8b708d9b9f4a",
+                  "parentUUID": "47b26389-0b59-424d-a1da-0490bd5b6d21",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_11_015 ตรวจสอบการยกเลิกการลบรูปโปรไฟล์",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการจัดการรูปโปรไฟล์ TS_SPMS_11_015 ตรวจสอบการยกเลิกการลบรูปโปรไฟล์",
+                  "timedOut": null,
+                  "duration": 2626,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรูปโปรไฟล์\ncy.get('[data-cy=\"change-image-btn\"]').click();\n// ตรวจเงื่อนไขว่ามีรูปโปรไฟล์อยู่แล้วหรือไม่\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"delete-image-from-modal-btn\"]').length > 0) {\n    // คลิกปุ่มลบรูปภาพ\n    cy.get('[data-cy=\"delete-image-from-modal-btn\"]').click();\n    // ตรวจสอบว่าโมดัลยืนยันการลบปรากฏขึ้น\n    cy.get('[data-cy=\"delete-image-confirm-modal\"]').should(\"be.visible\");\n    // คลิกปุ่มยกเลิก\n    cy.get('[data-cy=\"cancel-delete-btn\"]').click();\n    // ตรวจสอบว่าโมดัลยืนยันการลบถูกปิด\n    cy.get('[data-cy=\"delete-image-confirm-modal\"]').should(\"not.exist\");\n    // ตรวจสอบว่ายังคงอยู่ในโมดัลอัปโหลดรูปภาพ\n    cy.get('[data-cy=\"upload-image-modal\"]').should(\"be.visible\");\n  } else {\n    cy.log(\"No profile image to delete, skipping this test\");\n  }\n});",
+                  "err": {},
+                  "uuid": "25d05e68-8f28-4520-b8e8-3790f00d06f4",
+                  "parentUUID": "47b26389-0b59-424d-a1da-0490bd5b6d21",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a665eabe-bcc2-49a4-b85a-8b708d9b9f4a",
+                "25d05e68-8f28-4520-b8e8-3790f00d06f4"
+              ],
+              "failures": [
+                "2442cd67-2bb5-46df-8a18-16d2b22c8fd6",
+                "cf61102f-6593-4e93-89ef-dcae1e8b76fb"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 14264,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c5ff4a47-35b7-4858-8e59-c6bf1aebd3ca",
+              "title": "การทดสอบการแสดงผลและการทำงานของส่วนโปรเจกต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_016 ตรวจสอบการแสดงผลตารางโปรเจกต์หรือข้อความเมื่อไม่มีโปรเจกต์",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบการแสดงผลและการทำงานของส่วนโปรเจกต์ TS_SPMS_11_016 ตรวจสอบการแสดงผลตารางโปรเจกต์หรือข้อความเมื่อไม่มีโปรเจกต์",
+                  "timedOut": null,
+                  "duration": 2272,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจเงื่อนไขว่ามีโปรเจกต์หรือไม่\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"projects-table\"]').length > 0) {\n    // กรณีที่มีโปรเจกต์\n    cy.get('[data-cy=\"projects-table\"]').should(\"be.visible\");\n    cy.get('[data-cy=\"projects-table\"] tbody tr').should(\"have.length.at.least\", 1);\n  } else {\n    // กรณีที่ไม่มีโปรเจกต์\n    cy.get('[data-cy=\"no-projects-message\"]').should(\"be.visible\");\n  }\n});",
+                  "err": {},
+                  "uuid": "51463280-78fa-450c-9679-89e3680719d1",
+                  "parentUUID": "c5ff4a47-35b7-4858-8e59-c6bf1aebd3ca",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "51463280-78fa-450c-9679-89e3680719d1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2272,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f3f7b1a0-0a17-498d-91b2-5836ce8c88c5",
+              "title": "การทดสอบการจัดการข้อผิดพลาด",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_017 ตรวจสอบการแสดงและการปิดข้อความแจ้งเตือนความผิดพลาด",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบการจัดการข้อผิดพลาด TS_SPMS_11_017 ตรวจสอบการแสดงและการปิดข้อความแจ้งเตือนความผิดพลาด",
+                  "timedOut": null,
+                  "duration": 7666,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองการเกิดข้อผิดพลาด โดยสร้างสถานการณ์ที่ทำให้เกิดข้อผิดพลาด\n// เช่น ทดสอบการแก้ไขโปรไฟล์แต่ API ตอบกลับด้วยข้อผิดพลาด\ncy.get('[data-cy=\"edit-profile-btn\"]').click();\n// สร้าง stub ที่จำลองการตอบกลับแบบข้อผิดพลาด\ncy.intercept(\"PUT\", \"/api/profile\", {\n  statusCode: 500,\n  body: {\n    success: false,\n    message: \"Server error occurred\"\n  }\n}).as(\"updateProfileError\");\n// คลิกปุ่มบันทึก\ncy.get('[data-cy=\"save-profile-btn\"]').click();\n// รอให้ API request เสร็จสิ้น\ncy.wait(\"@updateProfileError\");\n// ตรวจสอบว่าข้อความแจ้งเตือนความผิดพลาดปรากฏขึ้น\ncy.get('[data-cy=\"profile-error\"]').should(\"be.visible\");\n// คลิกปุ่มปิดข้อความแจ้งเตือน\ncy.get('[data-cy=\"close-error\"]').click();\n// ตรวจสอบว่าข้อความแจ้งเตือนถูกปิดไป\ncy.get('[data-cy=\"profile-error\"]').should(\"not.exist\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `updateProfileError`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                    "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 1st request to the route: `updateProfileError`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75089:18)\n    at Object.errByPath (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75143:10)\n    at checkForXhr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134450:84)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134476:28)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "b83e3143-fef8-4b60-a4fd-7e0b129cbe80",
+                  "parentUUID": "f3f7b1a0-0a17-498d-91b2-5836ce8c88c5",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "b83e3143-fef8-4b60-a4fd-7e0b129cbe80"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 7666,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "b60051d7-81b4-48dc-ba5d-864067e98999",
+              "title": "การทดสอบการแสดงรูปภาพขนาดใหญ่",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_018 ตรวจสอบการเปิดและปิดโมดัลแสดงรูปภาพขนาดใหญ่",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบการแสดงรูปภาพขนาดใหญ่ TS_SPMS_11_018 ตรวจสอบการเปิดและปิดโมดัลแสดงรูปภาพขนาดใหญ่",
+                  "timedOut": null,
+                  "duration": 6323,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจเงื่อนไขว่ามีรูปโปรไฟล์หรือไม่\ncy.get('[data-cy=\"profile-image\"] img').then($img => {\n  if ($img.length > 0) {\n    // คลิกที่รูปโปรไฟล์เพื่อเปิดโมดัลแสดงรูปภาพขนาดใหญ่\n    cy.get('[data-cy=\"profile-image\"] img').click();\n    // ตรวจสอบว่าโมดัลแสดงรูปภาพขนาดใหญ่ปรากฏขึ้น\n    cy.get('[data-cy=\"image-preview-modal\"]').should(\"be.visible\");\n    // คลิกปุ่มปิดโมดัล\n    cy.get('[data-cy=\"close-preview-btn\"]').click();\n    // ตรวจสอบว่าโมดัลถูกปิด\n    cy.get('[data-cy=\"image-preview-modal\"]').should(\"not.exist\");\n  } else {\n    cy.log(\"No profile image available, skipping this test\");\n  }\n});",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"profile-image\"] img`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"profile-image\"] img`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_011.cy.js:390:9)",
+                    "diff": null
+                  },
+                  "uuid": "7bd1957e-10b3-4070-9187-98b33bd05986",
+                  "parentUUID": "b60051d7-81b4-48dc-ba5d-864067e98999",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "7bd1957e-10b3-4070-9187-98b33bd05986"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 6323,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5dfc2dae-0257-4828-bbc3-9a38fac43934",
+              "title": "การทดสอบฟังก์ชันการสลับการแสดงรหัสผ่าน",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_11_019 ตรวจสอบการสลับการแสดงรหัสผ่านในโมดัลเปลี่ยนรหัสผ่าน",
+                  "fullTitle": "หน้าจัดการโปรไฟล์ การทดสอบฟังก์ชันการสลับการแสดงรหัสผ่าน TS_SPMS_11_019 ตรวจสอบการสลับการแสดงรหัสผ่านในโมดัลเปลี่ยนรหัสผ่าน",
+                  "timedOut": null,
+                  "duration": 3168,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเปลี่ยนรหัสผ่าน\ncy.get('[data-cy=\"change-password-btn\"]').click();\n// ป้อนรหัสผ่านในช่องรหัสผ่านปัจจุบัน\ncy.get('[data-cy=\"current-password-input\"]').type(\"testpassword\");\n// ตรวจสอบว่าตอนแรกช่องรหัสผ่านเป็นประเภท password (ซ่อนรหัสผ่าน)\ncy.get('[data-cy=\"current-password-input\"]').should(\"have.attr\", \"type\", \"password\");\n// คลิกปุ่มสลับการแสดงรหัสผ่าน\ncy.get('[data-cy=\"toggle-current-password\"]').click();\n// ตรวจสอบว่าช่องรหัสผ่านเปลี่ยนเป็นประเภท text (แสดงรหัสผ่าน)\ncy.get('[data-cy=\"current-password-input\"]').should(\"have.attr\", \"type\", \"text\");\n// คลิกปุ่มสลับการแสดงรหัสผ่านอีกครั้ง\ncy.get('[data-cy=\"toggle-current-password\"]').click();\n// ตรวจสอบว่าช่องรหัสผ่านเปลี่ยนกลับเป็นประเภท password\ncy.get('[data-cy=\"current-password-input\"]').should(\"have.attr\", \"type\", \"password\");",
+                  "err": {},
+                  "uuid": "81ddf978-18e4-4dc8-af89-afd00e268e9e",
+                  "parentUUID": "5dfc2dae-0257-4828-bbc3-9a38fac43934",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "81ddf978-18e4-4dc8-af89-afd00e268e9e"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3168,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

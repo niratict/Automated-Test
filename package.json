@@ -3,18 +3,26 @@
   "version": "1.0.0",
   "description": "Cypress Test Project with Mochawesome Reporter",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:run:file": "cypress run --spec",
-    "cy:run:todo": "cypress run --spec 'cypress/e2e/todo/**/*.cy.js'",
-    "cy:run:auth": "cypress run --spec 'cypress/e2e/auth/**/*.cy.js'",
+    "cy:file": "cypress run --spec",
+    
+    "cypress:project": "cypress run --spec 'cypress/e2e/Project-Cypress/**/*.cy.js'",
+    "cypress:project:file": "cypress run --spec",
+    
+    "spms:project": "cypress run --spec 'cypress/e2e/SPMS/**/*.cy.js'",
+    "spms:project:file": "cypress run --spec",
+
+    "arsp:project": "cypress run --spec 'cypress/e2e/ARSP/**/*.cy.js'",
+    "arsp:project:file": "cypress run --spec",
+    
     "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/output.json",
     "report:generate": "marge cypress/reports/output.json -f report -o cypress/reports",
     "report:clean": "rimraf cypress/reports/*"
   },
   "devDependencies": {
     "cypress": "^14.0.0",
+    "cypress-xpath": "^2.0.1",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.4.0",
     "mochawesome-report-generator": "^6.2.0",

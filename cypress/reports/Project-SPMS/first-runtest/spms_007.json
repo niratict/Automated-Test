@@ -1,0 +1,599 @@
+{
+  "stats": {
+    "suites": 7,
+    "tests": 19,
+    "passes": 13,
+    "pending": 0,
+    "failures": 6,
+    "start": "2025-03-27T04:59:02.407Z",
+    "end": "2025-03-27T05:00:17.805Z",
+    "duration": 75398,
+    "testsRegistered": 19,
+    "passPercent": 68.42105263157895,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4eabb005-99fb-4be8-8696-e8688d3c2443",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SPMS\\spms_007.cy.js",
+      "file": "cypress\\e2e\\SPMS\\spms_007.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "106e1f6f-fc26-46d5-9fba-2131ceaa661d",
+          "title": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "ba6fa8fe-2b9b-4759-9e80-ca8c2241561a",
+              "title": "ทดสอบการแสดงผลข้อมูลพื้นฐาน",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_07_001 แสดงข้อมูลหัวข้อสปรินต์ถูกต้อง",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการแสดงผลข้อมูลพื้นฐาน TS_SPMS_07_001 แสดงข้อมูลหัวข้อสปรินต์ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 2649,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"sprint-name\"]').should(\"contain\", mockSprint.name);\ncy.get('[data-cy=\"project-name\"]').should(\"contain\", `โปรเจกต์: ${mockSprint.project_name}`);",
+                  "err": {},
+                  "uuid": "7b386ade-dee8-436a-af70-4b3cb374cd74",
+                  "parentUUID": "ba6fa8fe-2b9b-4759-9e80-ca8c2241561a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_002 แสดงข้อมูลวันที่เริ่มต้นและสิ้นสุดถูกต้อง",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการแสดงผลข้อมูลพื้นฐาน TS_SPMS_07_002 แสดงข้อมูลวันที่เริ่มต้นและสิ้นสุดถูกต้อง",
+                  "timedOut": null,
+                  "duration": 6270,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบการแสดงวันที่ในส่วนหัว\ncy.get('[data-cy=\"sprint-start-date\"]').should(\"contain\", formatThaiDate(mockSprint.start_date));\ncy.get('[data-cy=\"sprint-end-date\"]').should(\"contain\", formatThaiDate(mockSprint.end_date));\n// ตรวจสอบการแสดงวันที่ในส่วนรายละเอียด\ncy.get('[data-cy=\"start-date-detail\"]').should(\"contain\", formatThaiDate(mockSprint.start_date));\ncy.get('[data-cy=\"end-date-detail\"]').should(\"contain\", formatThaiDate(mockSprint.end_date));",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.text-xs.text-gray-500>' to contain '15/03/2568'",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.text-xs.text-gray-500>' to contain '15/03/2568'\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_007.cy.js:63:46)",
+                    "diff": null
+                  },
+                  "uuid": "d4a6b974-1c57-43f3-8d94-b82c17efa114",
+                  "parentUUID": "ba6fa8fe-2b9b-4759-9e80-ca8c2241561a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_003 แสดงข้อมูลเพิ่มเติมถูกต้อง",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการแสดงผลข้อมูลพื้นฐาน TS_SPMS_07_003 แสดงข้อมูลเพิ่มเติมถูกต้อง",
+                  "timedOut": null,
+                  "duration": 2123,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"created-by\"]').should(\"contain\", mockSprint.created_by);\ncy.get('[data-cy=\"created-date\"]').should(\"exist\");",
+                  "err": {},
+                  "uuid": "2b2043bd-97b2-4a3d-8862-2e23ff86f13c",
+                  "parentUUID": "ba6fa8fe-2b9b-4759-9e80-ca8c2241561a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "7b386ade-dee8-436a-af70-4b3cb374cd74",
+                "2b2043bd-97b2-4a3d-8862-2e23ff86f13c"
+              ],
+              "failures": [
+                "d4a6b974-1c57-43f3-8d94-b82c17efa114"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 11042,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "93758684-b9f3-49cb-a2c8-03622dd15294",
+              "title": "ทดสอบการแสดงสถานะสปรินต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_07_004 แสดงสถานะสปรินต์ [ยังไม่เริ่ม] ถูกต้องเมื่อวันที่ปัจจุบันน้อยกว่าวันเริ่มต้น",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการแสดงสถานะสปรินต์ TS_SPMS_07_004 แสดงสถานะสปรินต์ [ยังไม่เริ่ม] ถูกต้องเมื่อวันที่ปัจจุบันน้อยกว่าวันเริ่มต้น",
+                  "timedOut": null,
+                  "duration": 2434,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองวันที่ปัจจุบันให้อยู่ก่อนวันเริ่มต้น\nconst pastDate = new Date(\"2025-03-10\");\ncy.clock(pastDate.getTime());\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getSprintDateRanges\");\ncy.get('[data-cy=\"sprint-active-status\"]').should(\"contain\", \"ยังไม่เริ่ม\");\ncy.get('[data-cy=\"time-status-label\"]').should(\"contain\", \"จะเริ่มภายในอีก\");\ncy.get('[data-cy=\"time-status-value\"]').should(\"contain\", \"วัน\");\ncy.get('[data-cy=\"sprint-time-status\"]').should(\"contain\", \"อีก\");\ncy.get('[data-cy=\"sprint-time-status\"]').should(\"contain\", \"วันจะเริ่มสปรินต์\");",
+                  "err": {},
+                  "uuid": "bbe5e2f9-31dd-465f-8581-c9c860fde324",
+                  "parentUUID": "93758684-b9f3-49cb-a2c8-03622dd15294",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_005 แสดงสถานะสปรินต์ [กำลังดำเนินการ] ถูกต้องเมื่อวันที่ปัจจุบันอยู่ในช่วงสปรินต์",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการแสดงสถานะสปรินต์ TS_SPMS_07_005 แสดงสถานะสปรินต์ [กำลังดำเนินการ] ถูกต้องเมื่อวันที่ปัจจุบันอยู่ในช่วงสปรินต์",
+                  "timedOut": null,
+                  "duration": 6358,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองวันที่ปัจจุบันให้อยู่ในช่วงสปรินต์\nconst duringDate = new Date(\"2025-03-20\");\ncy.clock(duringDate.getTime());\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getSprintDateRanges\");\ncy.get('[data-cy=\"sprint-active-status\"]').should(\"contain\", \"กำลังดำเนินการ\");\ncy.get('[data-cy=\"time-status-label\"]').should(\"contain\", \"เวลาที่เหลือ\");\ncy.get('[data-cy=\"time-status-value\"]').should(\"contain\", \"วัน\");\ncy.get('[data-cy=\"sprint-time-status\"]').should(\"contain\", \"อีก\");\ncy.get('[data-cy=\"sprint-time-status\"]').should(\"contain\", \"วันจะสิ้นสุดสปรินต์\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.font-medium.text-yellow-600>' to contain 'กำลังดำเนินการ'",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.font-medium.text-yellow-600>' to contain 'กำลังดำเนินการ'\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_007.cy.js:123:49)",
+                    "diff": null
+                  },
+                  "uuid": "a1ca9dd0-57e6-4a9f-a8b3-4b0b868348de",
+                  "parentUUID": "93758684-b9f3-49cb-a2c8-03622dd15294",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_006 แสดงสถานะสปรินต์ [เสร็จสิ้น] ถูกต้องเมื่อวันที่ปัจจุบันมากกว่าวันสิ้นสุด",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการแสดงสถานะสปรินต์ TS_SPMS_07_006 แสดงสถานะสปรินต์ [เสร็จสิ้น] ถูกต้องเมื่อวันที่ปัจจุบันมากกว่าวันสิ้นสุด",
+                  "timedOut": null,
+                  "duration": 7547,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองวันที่ปัจจุบันให้อยู่หลังวันสิ้นสุด\nconst futureDate = new Date(\"2025-04-05\");\ncy.clock(futureDate.getTime());\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getSprintDateRanges\");\ncy.get('[data-cy=\"sprint-active-status\"]').should(\"contain\", \"เสร็จสิ้น\");\ncy.get('[data-cy=\"time-status-label\"]').should(\"contain\", \"เสร็จสิ้นเมื่อ\");\ncy.get('[data-cy=\"time-status-value\"]').should(\"contain\", \"วันที่แล้ว\");\ncy.get('[data-cy=\"sprint-time-status\"]').should(\"contain\", \"สปรินต์เสร็จสิ้นแล้ว\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `getSprint`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                    "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `getSprint`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75089:18)\n    at Object.errByPath (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75143:10)\n    at checkForXhr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134450:84)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134476:28)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "bb6ddd08-e2f4-4f74-95f1-aada9673d7fb",
+                  "parentUUID": "93758684-b9f3-49cb-a2c8-03622dd15294",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bbe5e2f9-31dd-465f-8581-c9c860fde324"
+              ],
+              "failures": [
+                "a1ca9dd0-57e6-4a9f-a8b3-4b0b868348de",
+                "bb6ddd08-e2f4-4f74-95f1-aada9673d7fb"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 16339,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "ca960da1-5fa6-40fc-8cd5-4e8751fa6e96",
+              "title": "ทดสอบความคืบหน้าของสปรินต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_07_007 แสดงความคืบหน้า 0% เมื่อยังไม่ถึงวันเริ่มต้น",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบความคืบหน้าของสปรินต์ TS_SPMS_07_007 แสดงความคืบหน้า 0% เมื่อยังไม่ถึงวันเริ่มต้น",
+                  "timedOut": null,
+                  "duration": 2329,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองวันที่ปัจจุบันให้อยู่ก่อนวันเริ่มต้น\nconst pastDate = new Date(\"2025-03-10\");\ncy.clock(pastDate.getTime());\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getSprintDateRanges\");\ncy.get('[data-cy=\"sprint-progress-percentage\"]').should(\"contain\", \"0%\");",
+                  "err": {},
+                  "uuid": "9c5ddf67-d675-4849-a842-eb53f169543b",
+                  "parentUUID": "ca960da1-5fa6-40fc-8cd5-4e8751fa6e96",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_008 แสดงความคืบหน้า 50% เมื่ออยู่กึ่งกลางระยะเวลาสปรินต์",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบความคืบหน้าของสปรินต์ TS_SPMS_07_008 แสดงความคืบหน้า 50% เมื่ออยู่กึ่งกลางระยะเวลาสปรินต์",
+                  "timedOut": null,
+                  "duration": 6665,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองวันที่ปัจจุบันให้อยู่กึ่งกลางระยะเวลาสปรินต์\nconst middleDate = new Date(\"2025-03-22\"); // วันกึ่งกลางของช่วง 15-29 มีนาคม\ncy.clock(middleDate.getTime());\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getSprintDateRanges\");\ncy.get('[data-cy=\"sprint-progress-percentage\"]').should(\"contain\", \"50%\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.text-sm.font-medium.text-indigo-600>' to contain '50%'",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.text-sm.font-medium.text-indigo-600>' to contain '50%'\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_007.cy.js:178:55)",
+                    "diff": null
+                  },
+                  "uuid": "2d3caff7-36ba-4a21-93fc-dc9a9fe85d21",
+                  "parentUUID": "ca960da1-5fa6-40fc-8cd5-4e8751fa6e96",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_009 แสดงความคืบหน้า 100% เมื่อสิ้นสุดระยะเวลาสปรินต์",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบความคืบหน้าของสปรินต์ TS_SPMS_07_009 แสดงความคืบหน้า 100% เมื่อสิ้นสุดระยะเวลาสปรินต์",
+                  "timedOut": null,
+                  "duration": 7481,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองวันที่ปัจจุบันให้อยู่หลังวันสิ้นสุด\nconst futureDate = new Date(\"2025-04-05\");\ncy.clock(futureDate.getTime());\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getSprintDateRanges\");\ncy.get('[data-cy=\"sprint-progress-percentage\"]').should(\"contain\", \"100%\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `getSprint`. No request ever occurred.\n\nhttps://on.cypress.io/wait",
+                    "estack": "CypressError: Timed out retrying after 5000ms: `cy.wait()` timed out waiting `5000ms` for the 2nd request to the route: `getSprint`. No request ever occurred.\n\nhttps://on.cypress.io/wait\n    at cypressErr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75089:18)\n    at Object.errByPath (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:75143:10)\n    at checkForXhr (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134450:84)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:134476:28)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "b6c2b0bf-6e94-4208-b43d-8b8db674a1fa",
+                  "parentUUID": "ca960da1-5fa6-40fc-8cd5-4e8751fa6e96",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "9c5ddf67-d675-4849-a842-eb53f169543b"
+              ],
+              "failures": [
+                "2d3caff7-36ba-4a21-93fc-dc9a9fe85d21",
+                "b6c2b0bf-6e94-4208-b43d-8b8db674a1fa"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 16475,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "5682ccfc-cb4d-48fb-be17-eaff9f1d8a40",
+              "title": "ทดสอบการนำทาง",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_07_010 กดปุ่มกลับสามารถกลับไปยังหน้าเลือกสปรินต์ได้",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการนำทาง TS_SPMS_07_010 กดปุ่มกลับสามารถกลับไปยังหน้าเลือกสปรินต์ได้",
+                  "timedOut": null,
+                  "duration": 2617,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept(\"GET\", \"**/api/sprints*\", {\n  statusCode: 200,\n  body: []\n}).as(\"getSprints\");\ncy.get('[data-cy=\"back-button\"]').click();\ncy.url().should(\"include\", \"/sprints\");",
+                  "err": {},
+                  "uuid": "780e3ee6-f766-4aa5-ac91-019ec86acce2",
+                  "parentUUID": "5682ccfc-cb4d-48fb-be17-eaff9f1d8a40",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_011 กดปุ่มแก้ไขเมื่อเป็นสปรินต์ล่าสุดสามารถไปยังหน้าแก้ไขได้",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการนำทาง TS_SPMS_07_011 กดปุ่มแก้ไขเมื่อเป็นสปรินต์ล่าสุดสามารถไปยังหน้าแก้ไขได้",
+                  "timedOut": null,
+                  "duration": 2432,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองให้เป็นสปรินต์ล่าสุด\ncy.intercept(\"GET\", `**/api/sprints/date-ranges*`, {\n  statusCode: 200,\n  body: [{\n    name: \"Sprint 1\",\n    start_date: \"2025-03-15\",\n    end_date: \"2025-03-29\"\n  }]\n}).as(\"getLatestSprint\");\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getLatestSprint\");\ncy.get('[data-cy=\"edit-sprint-button\"]').click();\ncy.url().should(\"include\", `/sprints/${mockSprint.id}/edit`);",
+                  "err": {},
+                  "uuid": "3ddfac6a-235e-4ee6-a298-feec898a8878",
+                  "parentUUID": "5682ccfc-cb4d-48fb-be17-eaff9f1d8a40",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_012 กดปุ่มแก้ไขเมื่อไม่ใช่สปรินต์ล่าสุดแสดงข้อความเตือน",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการนำทาง TS_SPMS_07_012 กดปุ่มแก้ไขเมื่อไม่ใช่สปรินต์ล่าสุดแสดงข้อความเตือน",
+                  "timedOut": null,
+                  "duration": 3086,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองให้ไม่ใช่สปรินต์ล่าสุด\ncy.intercept(\"GET\", `**/api/sprints/date-ranges*`, {\n  statusCode: 200,\n  body: [{\n    name: \"Sprint 1\",\n    start_date: \"2025-03-15\",\n    end_date: \"2025-03-29\"\n  }, {\n    name: \"Sprint 2\",\n    start_date: \"2025-03-30\",\n    end_date: \"2025-04-13\"\n  }]\n}).as(\"getNotLatestSprint\");\ncy.reload();\ncy.wait(\"@getSprint\");\ncy.wait(\"@getNotLatestSprint\");\ncy.get('[data-cy=\"edit-sprint-button\"]').click();\ncy.get('[data-cy=\"edit-warning-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"edit-warning-modal\"]').should(\"contain\", \"ไม่สามารถแก้ไขสปรินต์ได้\");\ncy.get('[data-cy=\"edit-warning-modal\"]').should(\"contain\", \"สามารถแก้ไขได้เฉพาะสปรินต์ล่าสุดเท่านั้น\");\n// ปิดกล่องข้อความเตือน\ncy.get('[data-cy=\"edit-warning-ok\"]').click();\ncy.get('[data-cy=\"edit-warning-modal\"]').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "9a52788e-e3c8-4792-8493-8584c5fc54d9",
+                  "parentUUID": "5682ccfc-cb4d-48fb-be17-eaff9f1d8a40",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "780e3ee6-f766-4aa5-ac91-019ec86acce2",
+                "3ddfac6a-235e-4ee6-a298-feec898a8878",
+                "9a52788e-e3c8-4792-8493-8584c5fc54d9"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8135,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "64e6e6eb-fde3-4f97-bc90-1b42854d0591",
+              "title": "ทดสอบการลบสปรินต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_07_013 ยกเลิกการลบสปรินต์เมื่อกดปุ่มยกเลิก",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการลบสปรินต์ TS_SPMS_07_013 ยกเลิกการลบสปรินต์เมื่อกดปุ่มยกเลิก",
+                  "timedOut": null,
+                  "duration": 2640,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"delete-sprint-button\"]').click();\ncy.get('[data-cy=\"delete-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"delete-modal-cancel\"]').click();\ncy.get('[data-cy=\"delete-modal\"]').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "bcc91034-37a7-4dd6-b44d-99025c663c9a",
+                  "parentUUID": "64e6e6eb-fde3-4f97-bc90-1b42854d0591",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_014 ลบสปรินต์สำเร็จและกลับไปยังหน้าเลือกสปรินต์",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการลบสปรินต์ TS_SPMS_07_014 ลบสปรินต์สำเร็จและกลับไปยังหน้าเลือกสปรินต์",
+                  "timedOut": null,
+                  "duration": 2377,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลอง API การลบให้สำเร็จ\ncy.intercept(\"DELETE\", `**/api/sprints/${mockSprint.id}`, {\n  statusCode: 200,\n  body: {\n    message: \"Sprint deleted successfully\"\n  }\n}).as(\"deleteSprint\");\ncy.intercept(\"GET\", \"**/api/sprints*\", {\n  statusCode: 200,\n  body: []\n}).as(\"getSprints\");\ncy.get('[data-cy=\"delete-sprint-button\"]').click();\ncy.get('[data-cy=\"delete-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"delete-modal-confirm\"]').click();\ncy.wait(\"@deleteSprint\");\ncy.url().should(\"include\", \"/sprints\");",
+                  "err": {},
+                  "uuid": "10104014-67b6-42c3-a49a-208e0ff58ac7",
+                  "parentUUID": "64e6e6eb-fde3-4f97-bc90-1b42854d0591",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_015 แสดงข้อความเตือนเมื่อไม่สามารถลบสปรินต์เนื่องจากมีสปรินต์ตามมาในลำดับ",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการลบสปรินต์ TS_SPMS_07_015 แสดงข้อความเตือนเมื่อไม่สามารถลบสปรินต์เนื่องจากมีสปรินต์ตามมาในลำดับ",
+                  "timedOut": null,
+                  "duration": 2605,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลอง API การลบให้ล้มเหลวเพราะมีสปรินต์ตามมา\ncy.intercept(\"DELETE\", `**/api/sprints/${mockSprint.id}`, {\n  statusCode: 400,\n  body: {\n    message: \"Cannot delete sprint. Later sprints exist in sequence.\"\n  }\n}).as(\"deleteSprintFailed\");\ncy.get('[data-cy=\"delete-sprint-button\"]').click();\ncy.get('[data-cy=\"delete-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"delete-modal-confirm\"]').click();\ncy.wait(\"@deleteSprintFailed\");\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"contain\", \"ไม่สามารถลบสปรินต์ได้\");\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"contain\", \"ไม่สามารถลบสปรินต์ได้ เนื่องจากมีสปรินต์ที่ตามมาในลำดับ\");\n// ปิดกล่องข้อความเตือน\ncy.get('[data-cy=\"delete-warning-ok\"]').click();\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "8c978bd1-8540-4c4b-ac9f-57c0d774a08c",
+                  "parentUUID": "64e6e6eb-fde3-4f97-bc90-1b42854d0591",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_016 แสดงข้อความเตือนเมื่อไม่สามารถลบสปรินต์เนื่องจากมีไฟล์ทดสอบอยู่",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบการลบสปรินต์ TS_SPMS_07_016 แสดงข้อความเตือนเมื่อไม่สามารถลบสปรินต์เนื่องจากมีไฟล์ทดสอบอยู่",
+                  "timedOut": null,
+                  "duration": 2603,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลอง API การลบให้ล้มเหลวเพราะมีไฟล์ทดสอบ\ncy.intercept(\"DELETE\", `**/api/sprints/${mockSprint.id}`, {\n  statusCode: 400,\n  body: {\n    message: \"Cannot delete sprint with existing test files\"\n  }\n}).as(\"deleteSprintWithFilesFailed\");\ncy.get('[data-cy=\"delete-sprint-button\"]').click();\ncy.get('[data-cy=\"delete-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"delete-modal-confirm\"]').click();\ncy.wait(\"@deleteSprintWithFilesFailed\");\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"be.visible\");\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"contain\", \"ไม่สามารถลบสปรินต์ได้\");\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"contain\", \"ไม่สามารถลบสปรินต์ที่มีไฟล์ทดสอบอยู่ได้\");\n// ปิดกล่องข้อความเตือน\ncy.get('[data-cy=\"delete-warning-ok\"]').click();\ncy.get('[data-cy=\"delete-warning-modal\"]').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "e4e66747-a02a-4d8a-9849-16ea034f842d",
+                  "parentUUID": "64e6e6eb-fde3-4f97-bc90-1b42854d0591",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bcc91034-37a7-4dd6-b44d-99025c663c9a",
+                "10104014-67b6-42c3-a49a-208e0ff58ac7",
+                "8c978bd1-8540-4c4b-ac9f-57c0d774a08c",
+                "e4e66747-a02a-4d8a-9849-16ea034f842d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 10225,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "8d55ccfa-cc58-4f13-b442-28f6cfd749bc",
+              "title": "ทดสอบกรณีพิเศษ",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_07_017 แสดงหน้า Loading ขณะกำลังโหลดข้อมูล",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบกรณีพิเศษ TS_SPMS_07_017 แสดงหน้า Loading ขณะกำลังโหลดข้อมูล",
+                  "timedOut": null,
+                  "duration": 3291,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ใช้ Network Throttling และแสดงหน้า Loading\ncy.intercept(\"GET\", `**/api/sprints/${mockSprint.id}`, req => {\n  req.on(\"response\", res => {\n    // หน่วงเวลาการตอบกลับ\n    res.setDelay(1000);\n  });\n}).as(\"getSprintDelayed\");\ncy.reload();\ncy.get('[data-cy=\"loading-spinner\"]').should(\"be.visible\");\ncy.wait(\"@getSprintDelayed\");",
+                  "err": {},
+                  "uuid": "5435a512-bffb-4675-b882-681624880f84",
+                  "parentUUID": "8d55ccfa-cc58-4f13-b442-28f6cfd749bc",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_018 แสดงข้อความเมื่อไม่พบข้อมูลสปรินต์",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบกรณีพิเศษ TS_SPMS_07_018 แสดงข้อความเมื่อไม่พบข้อมูลสปรินต์",
+                  "timedOut": null,
+                  "duration": 2396,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept(\"GET\", `**/api/sprints/${mockSprint.id}`, {\n  statusCode: 404,\n  body: {\n    message: \"Sprint not found\"\n  }\n}).as(\"getSprintNotFound\");\ncy.reload();\ncy.wait(\"@getSprintNotFound\");\ncy.get('[data-cy=\"error-container\"]').should(\"be.visible\");\ncy.get('[data-cy=\"error-container\"]').should(\"contain\", \"เกิดข้อผิดพลาด\");",
+                  "err": {},
+                  "uuid": "21c8566a-19e5-4b4c-86bf-98f97cd232a7",
+                  "parentUUID": "8d55ccfa-cc58-4f13-b442-28f6cfd749bc",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_07_019 แสดงหน้า \"ไม่พบข้อมูลสปรินต์\" เมื่อไม่มีข้อมูลสปรินต์",
+                  "fullTitle": "ทดสอบแต่ละกรณีให้เข้าสู่ระบบและเตรียมข้อมูลจำลอง ทดสอบกรณีพิเศษ TS_SPMS_07_019 แสดงหน้า \"ไม่พบข้อมูลสปรินต์\" เมื่อไม่มีข้อมูลสปรินต์",
+                  "timedOut": null,
+                  "duration": 6623,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.intercept(\"GET\", `**/api/sprints/${mockSprint.id}`, {\n  statusCode: 200,\n  body: null\n}).as(\"getEmptySprint\");\ncy.reload();\ncy.wait(\"@getEmptySprint\");\ncy.get('[data-cy=\"no-sprint-data\"]').should(\"be.visible\");\ncy.get('[data-cy=\"no-sprint-data\"]').should(\"contain\", \"ไม่พบข้อมูลสปรินต์\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"no-sprint-data\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"no-sprint-data\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_007.cy.js:390:43)",
+                    "diff": null
+                  },
+                  "uuid": "060028ab-b888-44a0-b597-e77b1c8ec44e",
+                  "parentUUID": "8d55ccfa-cc58-4f13-b442-28f6cfd749bc",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "5435a512-bffb-4675-b882-681624880f84",
+                "21c8566a-19e5-4b4c-86bf-98f97cd232a7"
+              ],
+              "failures": [
+                "060028ab-b888-44a0-b597-e77b1c8ec44e"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 12310,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

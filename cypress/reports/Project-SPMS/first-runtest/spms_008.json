@@ -1,0 +1,599 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 9,
+    "passes": 3,
+    "pending": 0,
+    "failures": 6,
+    "start": "2025-03-27T05:00:19.446Z",
+    "end": "2025-03-27T05:01:06.552Z",
+    "duration": 47106,
+    "testsRegistered": 20,
+    "passPercent": 15,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 11,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ff1d945f-6dfb-4420-b74d-fb919b9daad5",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SPMS\\spms_008.cy.js",
+      "file": "cypress\\e2e\\SPMS\\spms_008.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "601b9bdb-9812-4a05-b437-ee8f95729982",
+          "title": "ทดสอบหน้าไฟล์ทดสอบ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "f5a2840b-ebd4-4362-a66c-941294695603",
+              "title": "หน้าหลักและองค์ประกอบพื้นฐาน",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_08_001 ตรวจสอบการโหลดหน้า TestFiles สำเร็จ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ หน้าหลักและองค์ประกอบพื้นฐาน TS_SPMS_08_001 ตรวจสอบการโหลดหน้า TestFiles สำเร็จ",
+                  "timedOut": null,
+                  "duration": 2737,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบองค์ประกอบหลักปรากฏบนหน้า\ncy.get('[data-cy=\"test-files-page\"]').should(\"be.visible\");\ncy.get('[data-cy=\"project-selection-section\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "8187c92b-6c97-4086-81b9-7a211924b7d6",
+                  "parentUUID": "f5a2840b-ebd4-4362-a66c-941294695603",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_08_002 ตรวจสอบการแสดงข้อความเมื่อไม่มีโปรเจกต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ หน้าหลักและองค์ประกอบพื้นฐาน TS_SPMS_08_002 ตรวจสอบการแสดงข้อความเมื่อไม่มีโปรเจกต์",
+                  "timedOut": null,
+                  "duration": 6675,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองกรณีไม่มีโปรเจกต์\ncy.intercept(\"GET\", \"**/api/projects\", {\n  body: [],\n  delay: 100\n}).as(\"getEmptyProjects\");\ncy.reload();\ncy.wait(\"@getEmptyProjects\");\n// ตรวจสอบข้อความแจ้งเตือนเมื่อไม่มีโปรเจกต์\ncy.get('[data-cy=\"project-notfound-1\"]').should(\"be.visible\");\ncy.get('[data-cy=\"project-notfound-2\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: expected '<p.text-lg.font-medium.text-gray-700.mb-2>' to be 'visible'\n\nThis element `<p.text-lg.font-medium.text-gray-700.mb-2>` is not visible because its parent `<div.transition-all.duration-300.overflow-hidden.max-h-0.opacity-0.mt-0>` has CSS property: `opacity: 0`",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: expected '<p.text-lg.font-medium.text-gray-700.mb-2>' to be 'visible'\n\nThis element `<p.text-lg.font-medium.text-gray-700.mb-2>` is not visible because its parent `<div.transition-all.duration-300.overflow-hidden.max-h-0.opacity-0.mt-0>` has CSS property: `opacity: 0`\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_008.cy.js:52:47)",
+                    "diff": null
+                  },
+                  "uuid": "872bcc6e-1e66-44f6-8e4f-7d1c92a97a8c",
+                  "parentUUID": "f5a2840b-ebd4-4362-a66c-941294695603",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_08_003 ตรวจสอบการแสดงข้อความเมื่อเกิดข้อผิดพลาด",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ หน้าหลักและองค์ประกอบพื้นฐาน TS_SPMS_08_003 ตรวจสอบการแสดงข้อความเมื่อเกิดข้อผิดพลาด",
+                  "timedOut": null,
+                  "duration": 2293,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองสถานการณ์เกิดข้อผิดพลาด\ncy.intercept(\"GET\", \"**/api/projects\", {\n  statusCode: 500,\n  body: {\n    message: \"เกิดข้อผิดพลาดในการเรียกข้อมูล\"\n  }\n}).as(\"getProjectsError\");\ncy.reload();\ncy.wait(\"@getProjectsError\");\n// ตรวจสอบการแสดงข้อความแจ้งเตือนข้อผิดพลาด\ncy.get('[data-cy=\"error-message\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "ea5ffeac-acb0-4ec3-a8e6-89b17b5424aa",
+                  "parentUUID": "f5a2840b-ebd4-4362-a66c-941294695603",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8187c92b-6c97-4086-81b9-7a211924b7d6",
+                "ea5ffeac-acb0-4ec3-a8e6-89b17b5424aa"
+              ],
+              "failures": [
+                "872bcc6e-1e66-44f6-8e4f-7d1c92a97a8c"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 11705,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "08f069a1-62f5-4666-8748-7533e402eb27",
+              "title": "การเลือกโปรเจกต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_08_004 ตรวจสอบการแสดงรายการโปรเจกต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การเลือกโปรเจกต์ TS_SPMS_08_004 ตรวจสอบการแสดงรายการโปรเจกต์",
+                  "timedOut": null,
+                  "duration": 2145,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่ามีการแสดงโปรเจกต์ครบถ้วน\ncy.get('[data-cy^=\"project-card-\"]').should(\"have.length\", mockProjects.length);\n// ตรวจสอบข้อมูลของโปรเจกต์แต่ละรายการ\nmockProjects.forEach(project => {\n  cy.get(`[data-cy=\"project-card-${project.project_id}\"]`).should(\"contain\", project.name);\n});",
+                  "err": {},
+                  "uuid": "a7b04c2e-01e9-4048-98df-6961e79531c6",
+                  "parentUUID": "08f069a1-62f5-4666-8748-7533e402eb27",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_08_005 ตรวจสอบการเลือกโปรเจกต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การเลือกโปรเจกต์ TS_SPMS_08_005 ตรวจสอบการเลือกโปรเจกต์",
+                  "timedOut": null,
+                  "duration": 6679,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจกต์\ncy.get('[data-cy=\"project-card-1\"]').click();\n// ตรวจสอบว่าโปรเจกต์ถูกเลือก (มีสถานะถูกเลือก)\ncy.get('[data-cy=\"project-card-1\"]').should(\"have.class\", \"border-blue-500\");\n// ตรวจสอบการแสดงส่วนเลือกสปรินต์\ncy.get('[data-cy=\"sprints-section\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                    "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at ensureIsDescendent (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111922:68)\n    at ensureDescendents (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111973:5)\n    at ensureDescendentsAndScroll (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111979:14)\n    at ensureElIsNotCovered (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112110:5)\n    at runAllChecks (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112309:52)\n    at retryActionability (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112346:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "5f4a18f4-ebb5-4778-afc3-0f75ba73a858",
+                  "parentUUID": "08f069a1-62f5-4666-8748-7533e402eb27",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_08_006 ตรวจสอบการยกเลิกการเลือกโปรเจกต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การเลือกโปรเจกต์ TS_SPMS_08_006 ตรวจสอบการยกเลิกการเลือกโปรเจกต์",
+                  "timedOut": null,
+                  "duration": 6447,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจกต์\ncy.get('[data-cy=\"project-card-1\"]').click();\n// ตรวจสอบว่าโปรเจกต์ถูกเลือก\ncy.get('[data-cy=\"project-card-1\"]').should(\"have.class\", \"border-blue-500\");\n// ยกเลิกการเลือกโดยคลิกที่โปรเจกต์เดิมอีกครั้ง\ncy.get('[data-cy=\"project-card-1\"]').click();\n// ตรวจสอบว่าโปรเจกต์ไม่ถูกเลือก\ncy.get('[data-cy=\"project-card-1\"]').should(\"not.have.class\", \"border-blue-500\");\n// ตรวจสอบว่าส่วนเลือกสปรินต์ไม่แสดง\ncy.get('[data-cy=\"sprints-section\"]').should(\"not.exist\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with",
+                    "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n    at ensureIsDescendent (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111922:68)\n    at ensureDescendents (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111973:5)\n    at ensureDescendentsAndScroll (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111979:14)\n    at ensureElIsNotCovered (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112110:5)\n    at runAllChecks (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112309:52)\n    at retryActionability (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112346:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "c5100d57-607f-4eaa-a0f4-65752a63ed21",
+                  "parentUUID": "08f069a1-62f5-4666-8748-7533e402eb27",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a7b04c2e-01e9-4048-98df-6961e79531c6"
+              ],
+              "failures": [
+                "5f4a18f4-ebb5-4778-afc3-0f75ba73a858",
+                "c5100d57-607f-4eaa-a0f4-65752a63ed21"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 15271,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a9da922c-3be7-4dbe-b491-bd6fd7d9cd31",
+              "title": "การเลือกสปรินต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_08_007 ตรวจสอบการแสดงรายการสปรินต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การเลือกสปรินต์ TS_SPMS_08_007 ตรวจสอบการแสดงรายการสปรินต์",
+                  "timedOut": null,
+                  "duration": 4498,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่ามีการแสดงสปรินต์ครบถ้วน\ncy.get('[data-cy^=\"sprint-item-\"]').should(\"have.length\", mockSprints.length);\n// ตรวจสอบข้อมูลของสปรินต์แต่ละรายการ\nmockSprints.forEach(sprint => {\n  cy.get(`[data-cy=\"sprint-item-${sprint.sprint_id}\"]`).should(\"contain\", sprint.name);\n});",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `การเลือกสปรินต์`",
+                    "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `การเลือกสปรินต์`\n    at ensureIsDescendent (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111922:68)\n    at ensureDescendents (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111973:5)\n    at ensureDescendentsAndScroll (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111979:14)\n    at ensureElIsNotCovered (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112110:5)\n    at runAllChecks (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112309:52)\n    at retryActionability (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112346:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "b7b43eb2-b7d2-4fbb-b61c-e2770de6f551",
+                  "parentUUID": "a9da922c-3be7-4dbe-b491-bd6fd7d9cd31",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_08_008 ตรวจสอบการเลือกสปรินต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การเลือกสปรินต์ TS_SPMS_08_008 ตรวจสอบการเลือกสปรินต์",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกสปรินต์\ncy.get('[data-cy=\"sprint-item-1\"]').click();\n// ตรวจสอบว่าสปรินต์ถูกเลือก (มีสถานะถูกเลือก)\ncy.get('[data-cy=\"sprint-item-1\"]').should(\"have.class\", \"border-green-500\");\n// ตรวจสอบการแสดงส่วนไฟล์ทดสอบ\ncy.get('[data-cy=\"test-files-filter-section\"]').should(\"be.visible\");\ncy.get('[data-cy=\"test-files-list-section\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "8b4cecf8-76de-4733-a3fc-2e3be1996301",
+                  "parentUUID": "a9da922c-3be7-4dbe-b491-bd6fd7d9cd31",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_009 ตรวจสอบการยกเลิกการเลือกสปรินต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การเลือกสปรินต์ TS_SPMS_08_009 ตรวจสอบการยกเลิกการเลือกสปรินต์",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกสปรินต์\ncy.get('[data-cy=\"sprint-item-1\"]').click();\n// ตรวจสอบว่าสปรินต์ถูกเลือก\ncy.get('[data-cy=\"sprint-item-1\"]').should(\"have.class\", \"border-green-500\");\n// ยกเลิกการเลือกโดยคลิกที่สปรินต์เดิมอีกครั้ง\ncy.get('[data-cy=\"sprint-item-1\"]').click();\n// ตรวจสอบว่าสปรินต์ไม่ถูกเลือก\ncy.get('[data-cy=\"sprint-item-1\"]').should(\"not.have.class\", \"border-green-500\");\n// ตรวจสอบว่าส่วนไฟล์ทดสอบไม่แสดง\ncy.get('[data-cy=\"test-files-filter-section\"]').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "2fd195bd-f404-4e3b-8982-61d2a6326955",
+                  "parentUUID": "a9da922c-3be7-4dbe-b491-bd6fd7d9cd31",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_010 ตรวจสอบการแสดงข้อความเมื่อไม่มีสปรินต์",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การเลือกสปรินต์ TS_SPMS_08_010 ตรวจสอบการแสดงข้อความเมื่อไม่มีสปรินต์",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองกรณีไม่มีสปรินต์\ncy.intercept(\"GET\", \"**/api/projects/*/sprints\", {\n  body: []\n}).as(\"getEmptySprints\");\ncy.reload();\ncy.wait(\"@getProjects\");\n// เลือกโปรเจกต์\ncy.get('[data-cy=\"project-card-1\"]').click();\ncy.wait(\"@getEmptySprints\");\n// ตรวจสอบข้อความแจ้งเตือนเมื่อไม่มีสปรินต์\ncy.get('[data-cy=\"empty-sprints\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "6c0aec1c-14a8-4e37-aefd-6947cad96457",
+                  "parentUUID": "a9da922c-3be7-4dbe-b491-bd6fd7d9cd31",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "b7b43eb2-b7d2-4fbb-b61c-e2770de6f551"
+              ],
+              "pending": [],
+              "skipped": [
+                "8b4cecf8-76de-4733-a3fc-2e3be1996301",
+                "2fd195bd-f404-4e3b-8982-61d2a6326955",
+                "6c0aec1c-14a8-4e37-aefd-6947cad96457"
+              ],
+              "duration": 4498,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+              "title": "การจัดการไฟล์ทดสอบ",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_08_011 ตรวจสอบการแสดงรายการไฟล์ทดสอบ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_011 ตรวจสอบการแสดงรายการไฟล์ทดสอบ",
+                  "timedOut": null,
+                  "duration": 4420,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่ามีการแสดงไฟล์ทดสอบครบถ้วน\ncy.get('[data-cy^=\"test-file-\"]').should(\"have.length\", mockTestFiles.length);\n// ตรวจสอบข้อมูลของไฟล์ทดสอบแต่ละรายการ\nmockTestFiles.forEach(file => {\n  cy.get(`[data-cy=\"test-file-${file.file_id}\"]`).should(\"contain\", file.filename);\n  cy.get(`[data-cy=\"test-status-${file.status.toLowerCase()}\"]`).should(\"exist\");\n});",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `การจัดการไฟล์ทดสอบ`",
+                    "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `การจัดการไฟล์ทดสอบ`\n    at ensureIsDescendent (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111922:68)\n    at ensureDescendents (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111973:5)\n    at ensureDescendentsAndScroll (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111979:14)\n    at ensureElIsNotCovered (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112110:5)\n    at runAllChecks (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112309:52)\n    at retryActionability (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112346:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "f9fe85ba-76f9-4d78-9505-904a9f45d689",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_08_012 ตรวจสอบฟังก์ชันการค้นหาไฟล์ทดสอบ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_012 ตรวจสอบฟังก์ชันการค้นหาไฟล์ทดสอบ",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ค้นหาไฟล์ทดสอบด้วยคำค้นหา\ncy.get('[data-cy=\"search-test-files\"]').type(\"test_file_1\");\n// ตรวจสอบว่าแสดงเฉพาะไฟล์ที่ตรงกับคำค้นหา\ncy.get('[data-cy^=\"test-file-\"]').should(\"have.length\", 1);\ncy.get('[data-cy=\"test-file-1\"]').should(\"be.visible\");\n// ลบคำค้นหาและตรวจสอบว่าแสดงไฟล์ทั้งหมดอีกครั้ง\ncy.get('[data-cy=\"search-test-files\"]').clear();\ncy.get('[data-cy^=\"test-file-\"]').should(\"have.length\", mockTestFiles.length);",
+                  "err": {},
+                  "uuid": "ffc3ca82-452e-4f07-990f-63d74a6552b2",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_013 ตรวจสอบการกรองไฟล์ทดสอบตามสถานะ (ผ่าน)",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_013 ตรวจสอบการกรองไฟล์ทดสอบตามสถานะ (ผ่าน)",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// กรองไฟล์ทดสอบที่มีสถานะผ่าน\ncy.get('[data-cy=\"status-filter-button\"]').click();\ncy.get('[data-cy=\"filter-pass\"]').click();\n// ตรวจสอบว่าแสดงเฉพาะไฟล์ที่มีสถานะผ่าน\ncy.get('[data-cy^=\"test-file-\"]').should(\"have.length\", 1);\ncy.get('[data-cy=\"test-status-pass\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "4499f9e4-462f-49ad-b6fb-1c1637508a24",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_014 ตรวจสอบการกรองไฟล์ทดสอบตามสถานะ (ไม่ผ่าน)",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_014 ตรวจสอบการกรองไฟล์ทดสอบตามสถานะ (ไม่ผ่าน)",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// กรองไฟล์ทดสอบที่มีสถานะไม่ผ่าน\ncy.get('[data-cy=\"status-filter-button\"]').click();\ncy.get('[data-cy=\"filter-fail\"]').click();\n// ตรวจสอบว่าแสดงเฉพาะไฟล์ที่มีสถานะไม่ผ่าน\ncy.get('[data-cy^=\"test-file-\"]').should(\"have.length\", 1);\ncy.get('[data-cy=\"test-status-fail\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "f4173331-aa32-41cd-8e2a-fdac359da437",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_015 ตรวจสอบการเรียงลำดับไฟล์ทดสอบ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_015 ตรวจสอบการเรียงลำดับไฟล์ทดสอบ",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ทดสอบการเรียงลำดับต่างๆ\n// เรียงตามวันที่ล่าสุด (ค่าเริ่มต้น)\ncy.get('[data-cy=\"sort-order-button\"]').click();\ncy.get('[data-cy=\"sort-newest\"]').click();\n// เรียงตามวันที่เก่าสุด\ncy.get('[data-cy=\"sort-order-button\"]').click();\ncy.get('[data-cy=\"sort-oldest\"]').click();\n// เรียงตามชื่อ A-Z\ncy.get('[data-cy=\"sort-order-button\"]').click();\ncy.get('[data-cy=\"sort-name-asc\"]').click();\n// เรียงตามชื่อ Z-A\ncy.get('[data-cy=\"sort-order-button\"]').click();\ncy.get('[data-cy=\"sort-name-desc\"]').click();\n// ตรวจสอบว่ามีการเรียงลำดับตามที่เลือก (ตรวจสอบปุ่มที่เลือก)\ncy.get('[data-cy=\"sort-name-desc\"]').should(\"have.class\", \"bg-blue-50\");",
+                  "err": {},
+                  "uuid": "914f19c1-1b32-4e97-961e-69f3bf88410a",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_016 ตรวจสอบการรีเฟรชข้อมูลไฟล์ทดสอบ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_016 ตรวจสอบการรีเฟรชข้อมูลไฟล์ทดสอบ",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองการเรียกข้อมูลไฟล์ทดสอบใหม่\ncy.intercept(\"GET\", \"**/api/sprints/*/test-files\", {\n  body: mockTestFiles\n}).as(\"refreshTestFiles\");\n// คลิกปุ่มรีเฟรชข้อมูล\ncy.get('[data-cy=\"refresh-test-files\"]').click();\n// ตรวจสอบว่ามีการเรียกข้อมูลใหม่\ncy.wait(\"@refreshTestFiles\");",
+                  "err": {},
+                  "uuid": "3302a462-3c0a-4417-ab1c-fefd9ac65848",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_017 ตรวจสอบการนำทางไปยังหน้ารายละเอียดไฟล์ทดสอบ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_017 ตรวจสอบการนำทางไปยังหน้ารายละเอียดไฟล์ทดสอบ",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองการนำทางไปยังหน้ารายละเอียดไฟล์ทดสอบ\ncy.intercept(\"GET\", \"**/api/test-files/*\", {\n  body: mockTestFiles[0]\n}).as(\"getTestFileDetail\");\n// คลิกปุ่มดูรายละเอียดเพิ่มเติม\ncy.get('[data-cy=\"view-detail-button-1\"]').click();\n// ตรวจสอบว่ามีการนำทางไปยังหน้ารายละเอียดไฟล์ทดสอบ\ncy.url().should(\"include\", \"/test-files/1\");",
+                  "err": {},
+                  "uuid": "12a47835-6b99-4b51-bf75-148c8659882d",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": true
+                },
+                {
+                  "title": "TS_SPMS_08_018 ตรวจสอบการแสดงข้อความเมื่อไม่มีไฟล์ทดสอบ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การจัดการไฟล์ทดสอบ TS_SPMS_08_018 ตรวจสอบการแสดงข้อความเมื่อไม่มีไฟล์ทดสอบ",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองกรณีไม่มีไฟล์ทดสอบ\ncy.intercept(\"GET\", \"**/api/sprints/*/test-files\", {\n  body: []\n}).as(\"getEmptyTestFiles\");\ncy.reload();\ncy.wait(\"@getProjects\");\n// เลือกโปรเจกต์\ncy.get('[data-cy=\"project-card-1\"]').click();\ncy.wait(\"@getSprints\");\n// เลือกสปรินต์\ncy.get('[data-cy=\"sprint-item-1\"]').click();\ncy.wait(\"@getEmptyTestFiles\");\n// ตรวจสอบข้อความแจ้งเตือนเมื่อไม่มีไฟล์ทดสอบ\ncy.contains(\"ไม่พบไฟล์ทดสอบในสปรินต์นี้\").should(\"be.visible\");\ncy.get('[data-cy=\"upload-first-test-file-button\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "f3425c5d-eb99-4424-ab24-7bce7ce5743c",
+                  "parentUUID": "bb0d77d2-90df-4b03-b2cd-e61cfed836e4",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "f9fe85ba-76f9-4d78-9505-904a9f45d689"
+              ],
+              "pending": [],
+              "skipped": [
+                "ffc3ca82-452e-4f07-990f-63d74a6552b2",
+                "4499f9e4-462f-49ad-b6fb-1c1637508a24",
+                "f4173331-aa32-41cd-8e2a-fdac359da437",
+                "914f19c1-1b32-4e97-961e-69f3bf88410a",
+                "3302a462-3c0a-4417-ab1c-fefd9ac65848",
+                "12a47835-6b99-4b51-bf75-148c8659882d",
+                "f3425c5d-eb99-4424-ab24-7bce7ce5743c"
+              ],
+              "duration": 4420,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "a16bdc5b-6ea0-4510-8706-b91b673418ec",
+              "title": "การสร้างและอัพโหลดไฟล์ทดสอบ",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_08_019 ตรวจสอบการกดปุ่มสร้างไฟล์ทดสอบบนหน้าจอปกติ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การสร้างและอัพโหลดไฟล์ทดสอบ TS_SPMS_08_019 ตรวจสอบการกดปุ่มสร้างไฟล์ทดสอบบนหน้าจอปกติ",
+                  "timedOut": null,
+                  "duration": 4419,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองการนำทางไปยังหน้าสร้างไฟล์ทดสอบ\ncy.intercept(\"POST\", \"**/api/test-files\", {\n  statusCode: 201\n}).as(\"createTestFile\");\n// คลิกปุ่มสร้างไฟล์ทดสอบ\ncy.get('[data-cy=\"create-test-file-button\"]').click();\n// ตรวจสอบว่ามีการนำทางไปยังหน้าสร้างไฟล์ทดสอบหรือแสดงหน้าต่าง modal\n// กรณีนี้จะขึ้นอยู่กับการออกแบบ UI แต่เราสามารถทดสอบเบื้องต้นได้\ncy.url().should(\"include\", \"/test-files\");",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `การสร้างและอัพโหลดไฟล์ทดสอบ`",
+                    "estack": "CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element:\n\n`<div data-cy=\"project-card-1\" class=\"\n              cursor-pointer relative overflow-hidden\n              border-2 rounded-lg p-4\n              transition-all duration-200 \n              hover:shadow-md hover:scale-[1.01]\n              border-gray-200 hover:border-blue-300\n            \">...</div>`\n\nis being covered by another element:\n\n`<div class=\"min-h-screen bg-gray-50 p-4 sm:p-6 md:p-8\" data-cy=\"test-files-page\">...</div>`\n\nFix this problem, or use {force: true} to disable error checking.\n\nhttps://on.cypress.io/element-cannot-be-interacted-with\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `การสร้างและอัพโหลดไฟล์ทดสอบ`\n    at ensureIsDescendent (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111922:68)\n    at ensureDescendents (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111973:5)\n    at ensureDescendentsAndScroll (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111979:14)\n    at ensureElIsNotCovered (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112110:5)\n    at runAllChecks (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112309:52)\n    at retryActionability (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:112346:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "f81f7f94-dc5a-4676-8cee-3940edb0f095",
+                  "parentUUID": "a16bdc5b-6ea0-4510-8706-b91b673418ec",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_08_020 ตรวจสอบการกดปุ่มสร้างไฟล์ทดสอบบนหน้าจอมือถือ",
+                  "fullTitle": "ทดสอบหน้าไฟล์ทดสอบ การสร้างและอัพโหลดไฟล์ทดสอบ TS_SPMS_08_020 ตรวจสอบการกดปุ่มสร้างไฟล์ทดสอบบนหน้าจอมือถือ",
+                  "timedOut": null,
+                  "duration": 0,
+                  "state": "skipped",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองหน้าจอมือถือ\ncy.viewport(\"iphone-x\");\n// จำลองการนำทางไปยังหน้าสร้างไฟล์ทดสอบ\ncy.intercept(\"POST\", \"**/api/test-files\", {\n  statusCode: 201\n}).as(\"createTestFile\");\n// คลิกปุ่มสร้างไฟล์ทดสอบสำหรับมือถือ\ncy.get('[data-cy=\"create-test-file-button-mobile\"]').should(\"be.visible\");\ncy.get('[data-cy=\"create-test-file-button-mobile\"]').click();\n// ตรวจสอบว่ามีการนำทางไปยังหน้าสร้างไฟล์ทดสอบหรือแสดงหน้าต่าง modal\ncy.url().should(\"include\", \"/test-files\");",
+                  "err": {},
+                  "uuid": "4a2c01ab-5f0b-4ee2-88b3-c947ce730529",
+                  "parentUUID": "a16bdc5b-6ea0-4510-8706-b91b673418ec",
+                  "isHook": false,
+                  "skipped": true
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "f81f7f94-dc5a-4676-8cee-3940edb0f095"
+              ],
+              "pending": [],
+              "skipped": [
+                "4a2c01ab-5f0b-4ee2-88b3-c947ce730529"
+              ],
+              "duration": 4419,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,477 @@
+{
+  "stats": {
+    "suites": 8,
+    "tests": 13,
+    "passes": 13,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-03-27T04:55:41.109Z",
+    "end": "2025-03-27T04:56:14.689Z",
+    "duration": 33580,
+    "testsRegistered": 13,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b2c9466a-9547-4dfc-a045-41b8493f8d2c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SPMS\\spms_002.cy.js",
+      "file": "cypress\\e2e\\SPMS\\spms_002.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c33f9f0e-3f2d-44a0-b1fd-b80a19f7d291",
+          "title": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "0dd2b344-8f2b-4088-bef9-6f167d9a8866",
+              "title": "1. ทดสอบการแสดงผลองค์ประกอบหลักของหน้า",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_02_001 ตรวจสอบการแสดงผลหัวเรื่องของหน้า",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 1. ทดสอบการแสดงผลองค์ประกอบหลักของหน้า TS_SPMS_02_001 ตรวจสอบการแสดงผลหัวเรื่องของหน้า",
+                  "timedOut": null,
+                  "duration": 2622,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบการแสดงผลหัวข้อหลักของหน้า\ncy.get(\"[data-cy=main-dashboard]\").should(\"be.visible\");\ncy.contains(\"ระบบบริหารโครงการพัฒนาซอฟต์แวร์\").should(\"be.visible\");\ncy.contains(\"ภาพรวมของโปรเจกต์และไฟล์ทดสอบ\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "58af093a-e923-45f9-8f2f-f564d59b9bf5",
+                  "parentUUID": "0dd2b344-8f2b-4088-bef9-6f167d9a8866",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_02_002 ตรวจสอบการแสดงผลส่วนแสดงสถิติ",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 1. ทดสอบการแสดงผลองค์ประกอบหลักของหน้า TS_SPMS_02_002 ตรวจสอบการแสดงผลส่วนแสดงสถิติ",
+                  "timedOut": null,
+                  "duration": 2058,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบการแสดงผลการ์ดแสดงสถิติทั้ง 4 ใบ\ncy.get(\"[data-cy=stats-section]\").should(\"be.visible\");\ncy.get(\"[data-cy=stat-card-จำนวนโปรเจกต์ทั้งหมด]\").should(\"be.visible\");\ncy.get(\"[data-cy=stat-card-จำนวนสปรินต์ทั้งหมด]\").should(\"be.visible\");\ncy.get(\"[data-cy=stat-card-จำนวนไฟล์ทดสอบ]\").should(\"be.visible\");\ncy.get(\"[data-cy=stat-card-โปรเจกต์ที่กำลังดำเนินการ]\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "2b89a5ce-9ba5-472b-8f75-493841baff33",
+                  "parentUUID": "0dd2b344-8f2b-4088-bef9-6f167d9a8866",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_02_003 ตรวจสอบการแสดงผลส่วนโปรเจกต์ล่าสุด",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 1. ทดสอบการแสดงผลองค์ประกอบหลักของหน้า TS_SPMS_02_003 ตรวจสอบการแสดงผลส่วนโปรเจกต์ล่าสุด",
+                  "timedOut": null,
+                  "duration": 1937,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบการแสดงผลส่วนโปรเจกต์ล่าสุด\ncy.get(\"[data-cy=latest-projects-section]\").should(\"be.visible\");\ncy.contains(\"โปรเจกต์ล่าสุด\").should(\"be.visible\");\ncy.get(\"[data-cy=view-all-projects]\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "0b015d57-2d7d-4e91-9cfe-3739100b7e31",
+                  "parentUUID": "0dd2b344-8f2b-4088-bef9-6f167d9a8866",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_02_004 ตรวจสอบการแสดงผลส่วนไฟล์ทดสอบล่าสุด",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 1. ทดสอบการแสดงผลองค์ประกอบหลักของหน้า TS_SPMS_02_004 ตรวจสอบการแสดงผลส่วนไฟล์ทดสอบล่าสุด",
+                  "timedOut": null,
+                  "duration": 1922,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบการแสดงผลส่วนไฟล์ทดสอบล่าสุด\ncy.get(\"[data-cy=latest-test-files-section]\").should(\"be.visible\");\ncy.contains(\"ไฟล์ทดสอบล่าสุด\").should(\"be.visible\");\ncy.get(\"[data-cy=view-all-test-files]\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "dd81d0b7-570a-4a5f-aff8-7ff47996bb6a",
+                  "parentUUID": "0dd2b344-8f2b-4088-bef9-6f167d9a8866",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "58af093a-e923-45f9-8f2f-f564d59b9bf5",
+                "2b89a5ce-9ba5-472b-8f75-493841baff33",
+                "0b015d57-2d7d-4e91-9cfe-3739100b7e31",
+                "dd81d0b7-570a-4a5f-aff8-7ff47996bb6a"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8539,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "4df10b26-8004-49f6-a6e7-9adb062cdde3",
+              "title": "2. ทดสอบการแสดงผลข้อมูลสถิติ",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_02_005 ตรวจสอบค่าที่แสดงในการ์ดสถิติทั้งหมด",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 2. ทดสอบการแสดงผลข้อมูลสถิติ TS_SPMS_02_005 ตรวจสอบค่าที่แสดงในการ์ดสถิติทั้งหมด",
+                  "timedOut": null,
+                  "duration": 1856,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบค่าที่แสดงในการ์ดสถิติ\ncy.get(\"[data-cy=stat-card-จำนวนโปรเจกต์ทั้งหมด]\").should(\"contain\", mockMainPageData.stats.totalProjects);\ncy.get(\"[data-cy=stat-card-จำนวนสปรินต์ทั้งหมด]\").should(\"contain\", mockMainPageData.stats.totalSprints);\ncy.get(\"[data-cy=stat-card-จำนวนไฟล์ทดสอบ]\").should(\"contain\", mockMainPageData.stats.totalFiles);\ncy.get(\"[data-cy=stat-card-โปรเจกต์ที่กำลังดำเนินการ]\").should(\"contain\", mockMainPageData.stats.activeProjects);\n// ตรวจสอบคำอธิบายเพิ่มเติมที่แสดงในการ์ดสถิติ\ncy.get(\"[data-cy=stat-card-จำนวนโปรเจกต์ทั้งหมด]\").should(\"contain\", `${mockMainPageData.stats.activeProjects} โปรเจกต์ที่กำลังดำเนินการ`);\n// คำนวณเปอร์เซ็นต์โปรเจกต์ที่กำลังดำเนินการ\nconst percentageActive = (mockMainPageData.stats.activeProjects / mockMainPageData.stats.totalProjects * 100).toFixed(1);\ncy.get(\"[data-cy=stat-card-โปรเจกต์ที่กำลังดำเนินการ]\").should(\"contain\", `${percentageActive}% ของทั้งหมด`);",
+                  "err": {},
+                  "uuid": "4f7dadf0-1fe2-4d2f-8476-76d2761719eb",
+                  "parentUUID": "4df10b26-8004-49f6-a6e7-9adb062cdde3",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "4f7dadf0-1fe2-4d2f-8476-76d2761719eb"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 1856,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "6c991e55-84c1-4cf5-8cb7-e2f0f3fb3c02",
+              "title": "3. ทดสอบการแสดงผลข้อมูลโปรเจกต์ล่าสุด",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_02_006 ตรวจสอบการแสดงผลการ์ดโปรเจกต์ล่าสุดที่ถูกต้อง",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 3. ทดสอบการแสดงผลข้อมูลโปรเจกต์ล่าสุด TS_SPMS_02_006 ตรวจสอบการแสดงผลการ์ดโปรเจกต์ล่าสุดที่ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 1919,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบจำนวนโปรเจกต์ล่าสุดที่แสดง\ncy.get(\"[data-cy=latest-projects-section]\").find(\"[data-cy^=project-card-]\").should(\"have.length\", mockMainPageData.latestProjects.length);\n// ตรวจสอบโปรเจกต์ล่าสุดแต่ละรายการ\nmockMainPageData.latestProjects.forEach(project => {\n  const projectSelector = `[data-cy=project-card-${project.name.toLowerCase().replace(/\\s+/g, \"-\")}]`;\n  cy.get(projectSelector).should(\"be.visible\");\n  cy.get(projectSelector).should(\"contain\", project.name);\n  // ตรวจสอบวันที่สร้างโปรเจกต์\n  const createdDate = new Date(project.created_at).toLocaleDateString(\"th-TH\", {\n    day: \"2-digit\",\n    month: \"2-digit\",\n    year: \"numeric\"\n  });\n  cy.get(projectSelector).should(\"contain\", createdDate);\n  // ตรวจสอบสถานะโปรเจกต์\n  switch (project.status) {\n    case \"Active\":\n      cy.get(projectSelector).find(\"[data-cy=project-active-status]\").should(\"be.visible\").should(\"contain\", \"กำลังดำเนินการ\");\n      break;\n    case \"Completed\":\n      cy.get(projectSelector).find(\"[data-cy=project-completed-status]\").should(\"be.visible\").should(\"contain\", \"เสร็จสิ้น\");\n      break;\n    case \"Suspended\":\n      cy.get(projectSelector).find(\"[data-cy=project-suspended-status]\").should(\"be.visible\").should(\"contain\", \"ระงับ\");\n      break;\n  }\n  // ตรวจสอบจำนวนสปรินต์และไฟล์ที่แสดง\n  cy.get(projectSelector).should(\"contain\", `${project.sprintCount} สปรินต์`);\n  cy.get(projectSelector).should(\"contain\", `${project.fileCount} ไฟล์ทดสอบ`);\n});",
+                  "err": {},
+                  "uuid": "6bece01f-d5d4-4e28-b67a-8555ab8d6625",
+                  "parentUUID": "6c991e55-84c1-4cf5-8cb7-e2f0f3fb3c02",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_02_007 ตรวจสอบการทำงานของลิงก์ดูโปรเจกต์ทั้งหมด",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 3. ทดสอบการแสดงผลข้อมูลโปรเจกต์ล่าสุด TS_SPMS_02_007 ตรวจสอบการทำงานของลิงก์ดูโปรเจกต์ทั้งหมด",
+                  "timedOut": null,
+                  "duration": 2077,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบลิงก์ดูโปรเจกต์ทั้งหมด\ncy.get(\"[data-cy=view-all-projects]\").should(\"have.attr\", \"href\", \"/projects\").click();\ncy.url().should(\"include\", \"/projects\");",
+                  "err": {},
+                  "uuid": "b39eb96f-cead-4604-b088-8e7e77bc5ce3",
+                  "parentUUID": "6c991e55-84c1-4cf5-8cb7-e2f0f3fb3c02",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "6bece01f-d5d4-4e28-b67a-8555ab8d6625",
+                "b39eb96f-cead-4604-b088-8e7e77bc5ce3"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3996,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "950e6870-cc40-4a07-a230-1e86222a1c48",
+              "title": "4. ทดสอบการแสดงผลข้อมูลไฟล์ทดสอบล่าสุด",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_02_008 ตรวจสอบการแสดงผลการ์ดไฟล์ทดสอบล่าสุดที่ถูกต้อง",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 4. ทดสอบการแสดงผลข้อมูลไฟล์ทดสอบล่าสุด TS_SPMS_02_008 ตรวจสอบการแสดงผลการ์ดไฟล์ทดสอบล่าสุดที่ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 1928,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบจำนวนไฟล์ทดสอบล่าสุดที่แสดง\ncy.get(\"[data-cy=latest-test-files-section]\").find(\"[data-cy^=test-file-card-]\").should(\"have.length\", mockMainPageData.latestTestFiles.length);\n// ตรวจสอบไฟล์ทดสอบล่าสุดแต่ละรายการ\nmockMainPageData.latestTestFiles.forEach(file => {\n  const fileSelector = `[data-cy=test-file-card-${file.filename.toLowerCase().replace(/\\s+/g, \"-\")}]`;\n  cy.get(fileSelector).should(\"be.visible\");\n  cy.get(fileSelector).should(\"contain\", file.filename);\n  // ตรวจสอบชื่อโปรเจกต์และสปรินต์\n  cy.get(fileSelector).should(\"contain\", file.projectName);\n  cy.get(fileSelector).should(\"contain\", file.sprintName);\n  // ตรวจสอบสถานะไฟล์ทดสอบ\n  switch (file.status) {\n    case \"Pass\":\n      cy.get(fileSelector).find(\"[data-cy=test-file-pass-status]\").should(\"be.visible\").should(\"contain\", \"ผ่านการทดสอบ\");\n      break;\n    case \"Fail\":\n      cy.get(fileSelector).find(\"[data-cy=test-file-fail-status]\").should(\"be.visible\").should(\"contain\", \"ไม่ผ่านการทดสอบ\");\n      break;\n    default:\n      cy.get(fileSelector).find(\"[data-cy=test-file-pending-status]\").should(\"be.visible\").should(\"contain\", \"รอการทดสอบ\");\n      break;\n  }\n  // ตรวจสอบวันที่อัปโหลดและผู้อัปโหลด\n  const uploadDate = new Date(file.uploadDate).toLocaleString(\"th-TH\", {\n    day: \"2-digit\",\n    month: \"2-digit\",\n    year: \"numeric\",\n    hour: \"2-digit\",\n    minute: \"2-digit\"\n  });\n  cy.get(fileSelector).should(\"contain\", uploadDate);\n  cy.get(fileSelector).should(\"contain\", file.uploadedBy);\n});",
+                  "err": {},
+                  "uuid": "bb37e306-2435-4000-ad11-62734dacd887",
+                  "parentUUID": "950e6870-cc40-4a07-a230-1e86222a1c48",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_02_009 ตรวจสอบการทำงานของลิงก์ดูไฟล์ทดสอบทั้งหมด",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 4. ทดสอบการแสดงผลข้อมูลไฟล์ทดสอบล่าสุด TS_SPMS_02_009 ตรวจสอบการทำงานของลิงก์ดูไฟล์ทดสอบทั้งหมด",
+                  "timedOut": null,
+                  "duration": 1949,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบลิงก์ดูไฟล์ทดสอบทั้งหมด\ncy.get(\"[data-cy=view-all-test-files]\").should(\"have.attr\", \"href\", \"/test-files\").click();\ncy.url().should(\"include\", \"/test-files\");",
+                  "err": {},
+                  "uuid": "609d4a1d-e645-472c-9bcc-d768a61121fe",
+                  "parentUUID": "950e6870-cc40-4a07-a230-1e86222a1c48",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "bb37e306-2435-4000-ad11-62734dacd887",
+                "609d4a1d-e645-472c-9bcc-d768a61121fe"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3877,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "076b8dc9-8739-4c5f-8abf-785a7a28efe2",
+              "title": "5. ทดสอบฟังก์ชันการรีเฟรชข้อมูล",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_02_010 ตรวจสอบการทำงานของปุ่มรีเฟรช",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 5. ทดสอบฟังก์ชันการรีเฟรชข้อมูล TS_SPMS_02_010 ตรวจสอบการทำงานของปุ่มรีเฟรช",
+                  "timedOut": null,
+                  "duration": 2367,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบปุ่มรีเฟรช\ncy.get(\"[data-cy=refresh-dashboard]\").should(\"be.visible\");\n// รีเซ็ตข้อมูลจำลองที่จะได้รับหลังการรีเฟรช\nconst updatedStats = _objectSpread(_objectSpread({}, mockMainPageData.stats), {}, {\n  totalProjects: 16 // เปลี่ยนแปลงค่าเพื่อตรวจสอบการอัปเดต\n});\n// จำลองการเรียก API stats หลังจากรีเฟรช\ncy.intercept(\"GET\", \"**/api/main-dashboard/stats\", {\n  statusCode: 200,\n  body: {\n    stats: updatedStats,\n    latestProjects: mockMainPageData.latestProjects\n  }\n}).as(\"getRefreshedStats\");\n// จำลองการเรียก API latest-test-files หลังจากรีเฟรช\ncy.intercept(\"GET\", \"**/api/main-dashboard/latest-test-files\", {\n  statusCode: 200,\n  body: {\n    latestTestFiles: mockMainPageData.latestTestFiles\n  }\n}).as(\"getRefreshedTestFiles\");\n// คลิกปุ่มรีเฟรช\ncy.get(\"[data-cy=refresh-dashboard]\").click();\n// รอให้ API ตอบกลับ\ncy.wait([\"@getRefreshedStats\", \"@getRefreshedTestFiles\"]);\n// ตรวจสอบว่าข้อมูลถูกอัปเดตหลังจากรีเฟรช\ncy.get(\"[data-cy=stat-card-จำนวนโปรเจกต์ทั้งหมด]\").should(\"contain\", updatedStats.totalProjects);",
+                  "err": {},
+                  "uuid": "8dbdd9f0-1ee7-40a1-9b79-f1c6a55953b0",
+                  "parentUUID": "076b8dc9-8739-4c5f-8abf-785a7a28efe2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8dbdd9f0-1ee7-40a1-9b79-f1c6a55953b0"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2367,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "d36c6764-6116-4beb-9cc7-566b04df469a",
+              "title": "6. ทดสอบการแสดงผลหน้าจอโหลดข้อมูล",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_02_011 ตรวจสอบการแสดงผลหน้าจอโหลดข้อมูล",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 6. ทดสอบการแสดงผลหน้าจอโหลดข้อมูล TS_SPMS_02_011 ตรวจสอบการแสดงผลหน้าจอโหลดข้อมูล",
+                  "timedOut": null,
+                  "duration": 4822,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เข้าสู่ระบบใหม่ แต่จำลองให้การเรียก API ช้า\ncy.visit(\"/login\");\ncy.get('[data-cy=\"login-email\"]').type(testUser.email);\ncy.get('[data-cy=\"login-password\"]').type(testUser.password);\n// จำลองการเรียก API ที่ใช้เวลานาน\ncy.intercept(\"GET\", \"**/api/main-dashboard/stats\", req => {\n  req.on(\"response\", res => {\n    // หน่วงเวลาการตอบกลับ\n    res.setDelay(1000);\n  });\n}).as(\"getSlowStats\");\ncy.intercept(\"GET\", \"**/api/main-dashboard/latest-test-files\", req => {\n  req.on(\"response\", res => {\n    // หน่วงเวลาการตอบกลับ\n    res.setDelay(1000);\n  });\n}).as(\"getSlowTestFiles\");\n// เข้าสู่ระบบ\ncy.get('[data-cy=\"login-submit\"]').click();\n// ตรวจสอบการแสดงผลของหน้าจอโหลด\ncy.get(\"[data-cy=loading-screen]\").should(\"be.visible\");\ncy.get(\"[data-cy=loading-screen]\").should(\"contain\", \"กำลังโหลดข้อมูล\");\n// รอให้การโหลดเสร็จสิ้น\ncy.wait([\"@getSlowStats\", \"@getSlowTestFiles\"]);\n// ตรวจสอบว่าหน้าจอโหลดหายไปและแสดงเนื้อหาหลัก\ncy.get(\"[data-cy=loading-screen]\").should(\"not.exist\");\ncy.get(\"[data-cy=main-dashboard]\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "5f8f0c85-46cf-4330-bd1f-8c793b0a6955",
+                  "parentUUID": "d36c6764-6116-4beb-9cc7-566b04df469a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "5f8f0c85-46cf-4330-bd1f-8c793b0a6955"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 4822,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "fab5acfe-b89d-4424-a6d3-d458a4ea6d0b",
+              "title": "7. ทดสอบการแสดงผลกรณีมีข้อผิดพลาด",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_02_012 ตรวจสอบการแสดงผลกรณีเกิดข้อผิดพลาดในการโหลดข้อมูล",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 7. ทดสอบการแสดงผลกรณีมีข้อผิดพลาด TS_SPMS_02_012 ตรวจสอบการแสดงผลกรณีเกิดข้อผิดพลาดในการโหลดข้อมูล",
+                  "timedOut": null,
+                  "duration": 3775,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เข้าสู่ระบบใหม่ แต่จำลองให้การเรียก API เกิดข้อผิดพลาด\ncy.visit(\"/login\");\ncy.get('[data-cy=\"login-email\"]').type(testUser.email);\ncy.get('[data-cy=\"login-password\"]').type(testUser.password);\n// จำลองการเรียก API ที่เกิดข้อผิดพลาด\ncy.intercept(\"GET\", \"**/api/main-dashboard/stats\", {\n  statusCode: 500,\n  body: {\n    error: \"เกิดข้อผิดพลาดในการโหลดข้อมูล\"\n  }\n}).as(\"getErrorStats\");\n// เข้าสู่ระบบ\ncy.get('[data-cy=\"login-submit\"]').click();\n// รอให้ API ตอบกลับ\ncy.wait(\"@getErrorStats\");\n// ตรวจสอบการแสดงผลของหน้าจอแสดงข้อผิดพลาด\ncy.get(\"[data-cy=error-screen]\").should(\"be.visible\");\ncy.get(\"[data-cy=error-screen]\").should(\"contain\", \"เกิดข้อผิดพลาดในการโหลดข้อมูล\");\ncy.get(\"[data-cy=reload-button]\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "f49c82b7-6860-4b44-918f-875b93ea865a",
+                  "parentUUID": "fab5acfe-b89d-4424-a6d3-d458a4ea6d0b",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_02_013 ตรวจสอบการทำงานของปุ่มโหลดใหม่กรณีเกิดข้อผิดพลาด",
+                  "fullTitle": "MainPage - SPMS_02: ทดสอบหน้าหลักระบบบริหารโครงการพัฒนาซอฟต์แวร์ 7. ทดสอบการแสดงผลกรณีมีข้อผิดพลาด TS_SPMS_02_013 ตรวจสอบการทำงานของปุ่มโหลดใหม่กรณีเกิดข้อผิดพลาด",
+                  "timedOut": null,
+                  "duration": 3807,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เข้าสู่ระบบใหม่ แต่จำลองให้การเรียก API เกิดข้อผิดพลาด\ncy.visit(\"/login\");\ncy.get('[data-cy=\"login-email\"]').type(testUser.email);\ncy.get('[data-cy=\"login-password\"]').type(testUser.password);\n// จำลองการเรียก API ที่เกิดข้อผิดพลาด\ncy.intercept(\"GET\", \"**/api/main-dashboard/stats\", {\n  statusCode: 500,\n  body: {\n    error: \"เกิดข้อผิดพลาดในการโหลดข้อมูล\"\n  }\n}).as(\"getErrorStats\");\n// เข้าสู่ระบบ\ncy.get('[data-cy=\"login-submit\"]').click();\n// รอให้ API ตอบกลับ\ncy.wait(\"@getErrorStats\");\n// ตรวจสอบการแสดงผลของหน้าจอแสดงข้อผิดพลาด\ncy.get(\"[data-cy=error-screen]\").should(\"be.visible\");\n// จำลองการเรียก API หลังจากกดปุ่มโหลดใหม่และให้สำเร็จ\ncy.intercept(\"GET\", \"**/api/main-dashboard/stats\", {\n  statusCode: 200,\n  body: {\n    stats: mockMainPageData.stats,\n    latestProjects: mockMainPageData.latestProjects\n  }\n}).as(\"getSuccessStats\");\ncy.intercept(\"GET\", \"**/api/main-dashboard/latest-test-files\", {\n  statusCode: 200,\n  body: {\n    latestTestFiles: mockMainPageData.latestTestFiles\n  }\n}).as(\"getSuccessTestFiles\");\n// คลิกปุ่มโหลดใหม่\ncy.get(\"[data-cy=reload-button]\").click();\n// รอให้ API ตอบกลับ\ncy.wait([\"@getSuccessStats\", \"@getSuccessTestFiles\"]);\n// ตรวจสอบว่าหน้าจอแสดงข้อผิดพลาดหายไปและแสดงเนื้อหาหลัก\ncy.get(\"[data-cy=error-screen]\").should(\"not.exist\");\ncy.get(\"[data-cy=main-dashboard]\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "9515644c-2df9-4896-92ac-1c477d0906aa",
+                  "parentUUID": "fab5acfe-b89d-4424-a6d3-d458a4ea6d0b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f49c82b7-6860-4b44-918f-875b93ea865a",
+                "9515644c-2df9-4896-92ac-1c477d0906aa"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 7582,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

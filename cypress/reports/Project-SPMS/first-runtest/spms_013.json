@@ -1,0 +1,635 @@
+{
+  "stats": {
+    "suites": 10,
+    "tests": 16,
+    "passes": 1,
+    "pending": 0,
+    "failures": 15,
+    "start": "2025-03-27T05:06:39.361Z",
+    "end": "2025-03-27T05:07:54.380Z",
+    "duration": 75019,
+    "testsRegistered": 16,
+    "passPercent": 6.25,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "96397a39-c05a-451b-a30f-96641b3cd4b6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SPMS\\spms_013.cy.js",
+      "file": "cypress\\e2e\\SPMS\\spms_013.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e57266fd-55eb-4ca1-8694-43efb23be9bc",
+          "title": "หน้า Test Dashboard",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "6eb60b27-0333-4dd4-8761-f645c4a84c7c",
+              "title": "ส่วนการแสดงผลทั่วไป",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_001 แสดงหน้า Test Dashboard ได้ถูกต้อง",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการแสดงผลทั่วไป TS_SPMS_10_001 แสดงหน้า Test Dashboard ได้ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 3465,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบส่วนหัวหน้า\ncy.get('[data-cy=\"dashboard-title\"]').should(\"be.visible\");\ncy.get('[data-cy=\"test-dashboard\"]').should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "eaeab231-7e57-4e50-ab17-13e0a3abd067",
+                  "parentUUID": "6eb60b27-0333-4dd4-8761-f645c4a84c7c",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_10_002 แสดงปุ่ม Refresh และสามารถคลิกเพื่อรีเฟรชข้อมูลได้",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการแสดงผลทั่วไป TS_SPMS_10_002 แสดงปุ่ม Refresh และสามารถคลิกเพื่อรีเฟรชข้อมูลได้",
+                  "timedOut": null,
+                  "duration": 6251,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"refresh-dashboard\"]').should(\"be.visible\");\ncy.get('[data-cy=\"refresh-dashboard\"]').click();\n// รอให้โหลดข้อมูลเสร็จหลังจากคลิก refresh\ncy.get('[data-cy=\"test-dashboard\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"refresh-dashboard\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"refresh-dashboard\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:35:46)",
+                    "diff": null
+                  },
+                  "uuid": "c93e4343-14a0-4818-b888-9734d2e979ee",
+                  "parentUUID": "6eb60b27-0333-4dd4-8761-f645c4a84c7c",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "eaeab231-7e57-4e50-ab17-13e0a3abd067"
+              ],
+              "failures": [
+                "c93e4343-14a0-4818-b888-9734d2e979ee"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 9716,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c490eda6-15fc-4e23-a2b0-341b847bab96",
+              "title": "ส่วนการเลือกโปรเจค",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_003 สามารถเลือกโปรเจคได้",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการเลือกโปรเจค TS_SPMS_10_003 สามารถเลือกโปรเจคได้",
+                  "timedOut": null,
+                  "duration": 2234,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"project-selector\"]').should(\"be.visible\");\n// เลือกโปรเจคแรก (ถ้ามี)\ncy.get('[data-cy=\"project-selector\"]').click();\ncy.get('[data-cy^=\"project-option-\"]').first().click();\n// ตรวจสอบว่ามีการเปลี่ยนแปลงค่าที่เลือก\ncy.get('[data-cy=\"project-selector\"]').should(\"not.have.value\", \"all\");",
+                  "err": {
+                    "message": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select\n    at perform (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111566:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "e0188d8e-61e2-4b71-9219-06429ac60e70",
+                  "parentUUID": "c490eda6-15fc-4e23-a2b0-341b847bab96",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "e0188d8e-61e2-4b71-9219-06429ac60e70"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 2234,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "bdc65b18-42c7-4e00-a4c9-51fef58b3c50",
+              "title": "ส่วนการเลือก Sprint",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_004 สามารถเลือก Sprint ได้หลังเลือกโปรเจค",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการเลือก Sprint TS_SPMS_10_004 สามารถเลือก Sprint ได้หลังเลือกโปรเจค",
+                  "timedOut": null,
+                  "duration": 2718,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจคก่อน\ncy.get('[data-cy=\"project-selector\"]').click();\ncy.get('[data-cy^=\"project-option-\"]').first().click();\n// รอให้ Sprint โหลด\ncy.get('[data-cy=\"sprint-selector\"]', {\n  timeout: 10000\n}).should(\"be.visible\");\n// เลือก Sprint\ncy.get('[data-cy=\"sprint-selector\"]').click();\ncy.get('[data-cy^=\"sprint-option-\"]').first().click();\n// ตรวจสอบว่ามีการเปลี่ยนแปลงค่าที่เลือก\ncy.get('[data-cy=\"sprint-selector\"]').should(\"not.have.value\", \"all\");",
+                  "err": {
+                    "message": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select\n    at perform (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111566:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "b32b0c86-b71e-4ac8-90c9-ab16c8b629d8",
+                  "parentUUID": "bdc65b18-42c7-4e00-a4c9-51fef58b3c50",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "b32b0c86-b71e-4ac8-90c9-ab16c8b629d8"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 2718,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "73b676df-fc73-4f2f-bf30-f5e5faa6a024",
+              "title": "ส่วนสถิติและกราฟ",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_005 แสดงสถิติโดยรวมได้ถูกต้อง",
+                  "fullTitle": "หน้า Test Dashboard ส่วนสถิติและกราฟ TS_SPMS_10_005 แสดงสถิติโดยรวมได้ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 6296,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"sprint-statistics\"]').should(\"be.visible\");\ncy.get('[data-cy=\"summary-stats-title\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"sprint-statistics\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"sprint-statistics\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:75:46)",
+                    "diff": null
+                  },
+                  "uuid": "907688b6-1f27-4bcd-9631-06160a48e1ca",
+                  "parentUUID": "73b676df-fc73-4f2f-bf30-f5e5faa6a024",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_10_006 แสดงกราฟวงกลมสรุปผลได้ถูกต้อง",
+                  "fullTitle": "หน้า Test Dashboard ส่วนสถิติและกราฟ TS_SPMS_10_006 แสดงกราฟวงกลมสรุปผลได้ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 6450,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"pie-chart-title\"]').should(\"be.visible\");\ncy.get('[data-cy=\"pie-chart-container\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"pie-chart-title\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"pie-chart-title\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:80:44)",
+                    "diff": null
+                  },
+                  "uuid": "c863394a-dbb9-472d-8c2a-65f034ee55ce",
+                  "parentUUID": "73b676df-fc73-4f2f-bf30-f5e5faa6a024",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_10_007 แสดงกราฟแท่งสรุปผลได้ถูกต้อง",
+                  "fullTitle": "หน้า Test Dashboard ส่วนสถิติและกราฟ TS_SPMS_10_007 แสดงกราฟแท่งสรุปผลได้ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 6611,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"bar-chart-title\"]').should(\"be.visible\");\ncy.get('[data-cy=\"bar-chart-container\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"bar-chart-title\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"bar-chart-title\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:85:44)",
+                    "diff": null
+                  },
+                  "uuid": "f3c9c705-42de-4882-a68b-760fac2d6fe0",
+                  "parentUUID": "73b676df-fc73-4f2f-bf30-f5e5faa6a024",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_10_008 แสดงกราฟ Sprint Stacked Chart ได้ถูกต้อง",
+                  "fullTitle": "หน้า Test Dashboard ส่วนสถิติและกราฟ TS_SPMS_10_008 แสดงกราฟ Sprint Stacked Chart ได้ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 6560,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"sprint-stacked-chart-container\"]').should(\"be.visible\");\ncy.get('[data-cy=\"sprint-chart-title\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"sprint-stacked-chart-container\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"sprint-stacked-chart-container\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:90:59)",
+                    "diff": null
+                  },
+                  "uuid": "6c2dd3c8-e47d-4424-a6c5-9fbbf148b9e5",
+                  "parentUUID": "73b676df-fc73-4f2f-bf30-f5e5faa6a024",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "907688b6-1f27-4bcd-9631-06160a48e1ca",
+                "c863394a-dbb9-472d-8c2a-65f034ee55ce",
+                "f3c9c705-42de-4882-a68b-760fac2d6fe0",
+                "6c2dd3c8-e47d-4424-a6c5-9fbbf148b9e5"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 25917,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "647d9c09-7f26-4be0-9c0b-b179f1b11dec",
+              "title": "ส่วนการค้นหาและกรอง",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_009 สามารถค้นหาข้อมูลการทดสอบได้",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการค้นหาและกรอง TS_SPMS_10_009 สามารถค้นหาข้อมูลการทดสอบได้",
+                  "timedOut": null,
+                  "duration": 6938,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"search-filter-container\"]').should(\"be.visible\");\ncy.get('[data-cy=\"search-input\"]').should(\"be.visible\");\n// ทดสอบการค้นหา\ncy.get('[data-cy=\"search-input\"]').type(\"test\");\n// ตรวจสอบว่ามีผลลัพธ์หรือข้อความแจ้งเตือนไม่พบข้อมูล\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"test-results-container\"] [data-cy^=\"test-result-item-\"]').length > 0) {\n    cy.get('[data-cy^=\"test-result-item-\"]').should(\"be.visible\");\n  } else {\n    cy.get('[data-cy=\"no-results-message\"]').should(\"be.visible\");\n  }\n});",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"search-filter-container\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"search-filter-container\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:97:52)",
+                    "diff": null
+                  },
+                  "uuid": "619cc2e0-5910-4cc7-bb23-2723b5fe7a63",
+                  "parentUUID": "647d9c09-7f26-4be0-9c0b-b179f1b11dec",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_10_010 สามารถกรองผลการทดสอบตามสถานะได้",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการค้นหาและกรอง TS_SPMS_10_010 สามารถกรองผลการทดสอบตามสถานะได้",
+                  "timedOut": null,
+                  "duration": 6898,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "cy.get('[data-cy=\"status-filter\"]').should(\"be.visible\");\n// กรองเฉพาะผลทดสอบที่ผ่าน (passed)\ncy.get('[data-cy=\"status-filter\"]').select(\"passed\");\n// ตรวจสอบว่ามีผลลัพธ์หรือข้อความแจ้งเตือนไม่พบข้อมูล\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"test-results-container\"] [data-cy^=\"test-result-item-\"]').length > 0) {\n    cy.get('[data-cy^=\"test-result-item-\"]').should(\"be.visible\");\n  } else {\n    cy.get('[data-cy=\"no-results-message\"]').should(\"be.visible\");\n  }\n});\n// กรองเฉพาะผลทดสอบที่ไม่ผ่าน (failed)\ncy.get('[data-cy=\"status-filter\"]').select(\"failed\");\n// ตรวจสอบว่ามีผลลัพธ์หรือข้อความแจ้งเตือนไม่พบข้อมูล\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"test-results-container\"] [data-cy^=\"test-result-item-\"]').length > 0) {\n    cy.get('[data-cy^=\"test-result-item-\"]').should(\"be.visible\");\n  } else {\n    cy.get('[data-cy=\"no-results-message\"]').should(\"be.visible\");\n  }\n});",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"status-filter\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"status-filter\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:118:42)",
+                    "diff": null
+                  },
+                  "uuid": "8c7ef6c5-fdd8-4399-acc2-60b3e37008aa",
+                  "parentUUID": "647d9c09-7f26-4be0-9c0b-b179f1b11dec",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "619cc2e0-5910-4cc7-bb23-2723b5fe7a63",
+                "8c7ef6c5-fdd8-4399-acc2-60b3e37008aa"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 13836,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "7df21c1f-8c7f-47eb-b645-86409fb245a9",
+              "title": "ส่วนผลการทดสอบ",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_011 แสดงรายการผลการทดสอบได้ถูกต้อง",
+                  "fullTitle": "หน้า Test Dashboard ส่วนผลการทดสอบ TS_SPMS_10_011 แสดงรายการผลการทดสอบได้ถูกต้อง",
+                  "timedOut": null,
+                  "duration": 2524,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจคก่อน\ncy.get('[data-cy=\"project-selector\"]').click();\ncy.get('[data-cy^=\"project-option-\"]').first().click();\n// ตรวจสอบว่ามีคอนเทนเนอร์สำหรับแสดงผลการทดสอบ\ncy.get('[data-cy=\"test-results-container\"]').should(\"be.visible\");\n// ตรวจสอบว่ามีผลลัพธ์หรือข้อความแจ้งเตือนไม่พบข้อมูล\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"test-results-container\"] [data-cy^=\"test-result-item-\"]').length > 0) {\n    cy.get('[data-cy^=\"test-result-item-\"]').should(\"be.visible\");\n  } else {\n    cy.get('[data-cy=\"no-results-message\"]').should(\"be.visible\");\n  }\n});",
+                  "err": {
+                    "message": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select\n    at perform (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111566:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "18d45789-42cb-4f0f-8d2c-a07c7cccd140",
+                  "parentUUID": "7df21c1f-8c7f-47eb-b645-86409fb245a9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_10_012 แสดงรายละเอียดของผลการทดสอบแต่ละรายการได้",
+                  "fullTitle": "หน้า Test Dashboard ส่วนผลการทดสอบ TS_SPMS_10_012 แสดงรายละเอียดของผลการทดสอบแต่ละรายการได้",
+                  "timedOut": null,
+                  "duration": 2671,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจคก่อน\ncy.get('[data-cy=\"project-selector\"]').click();\ncy.get('[data-cy^=\"project-option-\"]').first().click();\n// ตรวจสอบว่ามีผลลัพธ์การทดสอบ\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"test-results-container\"] [data-cy^=\"test-result-item-\"]').length > 0) {\n    // คลิกที่รายการแรกเพื่อดูรายละเอียด\n    cy.get('[data-cy^=\"test-result-item-\"]').first().click();\n    // ตรวจสอบว่ามีการแสดงรายละเอียด\n    cy.get('[data-cy^=\"test-details-list-\"]').should(\"be.visible\");\n  } else {\n    // ข้ามการทดสอบหากไม่มีผลลัพธ์\n    cy.log(\"ไม่พบรายการผลการทดสอบ\");\n  }\n});",
+                  "err": {
+                    "message": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select\n    at perform (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111566:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "7b12eead-a0e6-4b3e-819f-49c8682afb59",
+                  "parentUUID": "7df21c1f-8c7f-47eb-b645-86409fb245a9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "18d45789-42cb-4f0f-8d2c-a07c7cccd140",
+                "7b12eead-a0e6-4b3e-819f-49c8682afb59"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 5195,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "2b014ded-d371-4adc-b32a-b8a19125215e",
+              "title": "ส่วนการแบ่งหน้า (Pagination)",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_013 แสดงส่วนแบ่งหน้าและสามารถเปลี่ยนหน้าได้",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการแบ่งหน้า (Pagination) TS_SPMS_10_013 แสดงส่วนแบ่งหน้าและสามารถเปลี่ยนหน้าได้",
+                  "timedOut": null,
+                  "duration": 2629,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจคที่มีข้อมูลมากกว่า 1 หน้า (ถ้ามี)\ncy.get('[data-cy=\"project-selector\"]').click();\ncy.get('[data-cy^=\"project-option-\"]').first().click();\n// ตรวจสอบว่ามีส่วนแบ่งหน้า\ncy.get('[data-cy=\"pagination-container\"]').should(\"be.visible\");\n// ตรวจสอบว่ามีปุ่มถัดไปและคลิกได้หรือไม่\ncy.get(\"body\").then($body => {\n  // ถ้ามีปุ่มถัดไปและไม่เป็น disabled\n  if ($body.find('[data-cy=\"pagination-next\"]:not(:disabled)').length > 0) {\n    cy.get('[data-cy=\"pagination-next\"]').click();\n    // ตรวจสอบว่าหน้าที่ 2 ถูกเลือก\n    cy.get('[data-cy=\"pagination-page-2\"]').should(\"have.class\", \"bg-blue-500\");\n  } else {\n    cy.log(\"ไม่สามารถไปหน้าถัดไปได้หรือมีเพียงหน้าเดียว\");\n  }\n});",
+                  "err": {
+                    "message": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select\n    at perform (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111566:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "202c718f-e821-4fb0-a218-f4ae87e25228",
+                  "parentUUID": "2b014ded-d371-4adc-b32a-b8a19125215e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_10_014 สามารถไปที่หน้าแรกและหน้าสุดท้ายได้",
+                  "fullTitle": "หน้า Test Dashboard ส่วนการแบ่งหน้า (Pagination) TS_SPMS_10_014 สามารถไปที่หน้าแรกและหน้าสุดท้ายได้",
+                  "timedOut": null,
+                  "duration": 2528,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจคที่มีข้อมูลมากกว่า 1 หน้า (ถ้ามี)\ncy.get('[data-cy=\"project-selector\"]').click();\ncy.get('[data-cy^=\"project-option-\"]').first().click();\n// ตรวจสอบว่ามีส่วนแบ่งหน้า\ncy.get('[data-cy=\"pagination-container\"]').should(\"be.visible\");\ncy.get(\"body\").then($body => {\n  // ถ้ามีปุ่มหน้าสุดท้ายและไม่เป็น disabled\n  if ($body.find('[data-cy=\"pagination-last\"]:not(:disabled)').length > 0) {\n    // ไปที่หน้าสุดท้าย\n    cy.get('[data-cy=\"pagination-last\"]').click();\n    // ตรวจสอบว่าหน้าสุดท้ายถูกเลือก (ไม่สามารถระบุเลขหน้าได้ตรงๆ)\n    cy.get('[data-cy=\"pagination-next\"]').should(\"be.disabled\");\n    // ไปที่หน้าแรก\n    cy.get('[data-cy=\"pagination-first\"]').click();\n    // ตรวจสอบว่าหน้าแรกถูกเลือก\n    cy.get('[data-cy=\"pagination-page-1\"]').should(\"have.class\", \"bg-blue-500\");\n  } else {\n    cy.log(\"มีเพียงหน้าเดียวหรือไม่สามารถไปหน้าสุดท้ายได้\");\n  }\n});",
+                  "err": {
+                    "message": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select\n    at perform (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111566:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "a39c3187-8be8-4dd5-8cca-4d89e3127daf",
+                  "parentUUID": "2b014ded-d371-4adc-b32a-b8a19125215e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "202c718f-e821-4fb0-a218-f4ae87e25228",
+                "a39c3187-8be8-4dd5-8cca-4d89e3127daf"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 5157,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "c54d7d7c-c26a-4182-86e0-277256ed2d07",
+              "title": "การดูกราฟและสถิติเมื่อเลือกโปรเจค",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_015 แสดงกราฟและสถิติที่ถูกต้องเมื่อเลือกโปรเจค",
+                  "fullTitle": "หน้า Test Dashboard การดูกราฟและสถิติเมื่อเลือกโปรเจค TS_SPMS_10_015 แสดงกราฟและสถิติที่ถูกต้องเมื่อเลือกโปรเจค",
+                  "timedOut": null,
+                  "duration": 3075,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// เลือกโปรเจค\ncy.get('[data-cy=\"project-selector\"]').click();\ncy.get('[data-cy^=\"project-option-\"]').first().click();\n// ตรวจสอบว่ากราฟวงกลมแสดงผล\ncy.get('[data-cy=\"pie-chart-container\"]').should(\"be.visible\");\n// ตรวจสอบว่ากราฟแท่งแสดงผล\ncy.get('[data-cy=\"bar-chart-container\"]').should(\"be.visible\");\n// ตรวจสอบว่ากราฟ Sprint Stacked Chart แสดงผล\ncy.get('[data-cy=\"sprint-stacked-chart\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: `cy.click()` cannot be called on a `<select>` element. Use `cy.select()` command instead to change the value.\n\nhttps://on.cypress.io/select\n    at perform (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:111566:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6446:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromiseCtx (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1583:10)\n    at _drainQueueStep (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2381:12)\n    at _drainQueue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2370:9)\n    at Async._drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2386:5)\n    at Async.drainQueues (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:2256:14)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at $Cy.expect (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138237:7)\n    at Context.shouldFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117789:18)\n    at Context.should (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:117903:23)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142119:39)\n    at assertions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142367:16)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Object.gotValue (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6448:18)\n    at Object.gotAccum (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:6435:25)\n    at Object.tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)",
+                    "diff": null
+                  },
+                  "uuid": "32e01714-9d90-47ef-a8ec-02e5c9d57a60",
+                  "parentUUID": "c54d7d7c-c26a-4182-86e0-277256ed2d07",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "32e01714-9d90-47ef-a8ec-02e5c9d57a60"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 3075,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "6cdf440e-9770-42b0-8447-9cb12b08ddfe",
+              "title": "การจัดการข้อผิดพลาด",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_10_016 แสดงข้อความเมื่อไม่พบผลการทดสอบ",
+                  "fullTitle": "หน้า Test Dashboard การจัดการข้อผิดพลาด TS_SPMS_10_016 แสดงข้อความเมื่อไม่พบผลการทดสอบ",
+                  "timedOut": null,
+                  "duration": 6449,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ใส่ข้อมูลค้นหาที่ไม่น่าจะมีในระบบ\ncy.get('[data-cy=\"search-input\"]').type(\"ข้อมูลที่ไม่น่าจะมีในระบบ_xyz987\");\n// ตรวจสอบว่ามีข้อความแจ้งเตือนไม่พบข้อมูล\ncy.get('[data-cy=\"no-results-message\"]').should(\"be.visible\");",
+                  "err": {
+                    "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"search-input\"]`, but never found it.",
+                    "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `[data-cy=\"search-input\"]`, but never found it.\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/SPMS/spms_013.cy.js:283:9)",
+                    "diff": null
+                  },
+                  "uuid": "481af864-b8df-4b43-93e7-e3476a352211",
+                  "parentUUID": "6cdf440e-9770-42b0-8447-9cb12b08ddfe",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "481af864-b8df-4b43-93e7-e3476a352211"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 6449,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

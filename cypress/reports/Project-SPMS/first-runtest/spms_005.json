@@ -1,0 +1,423 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 12,
+    "passes": 11,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-27T04:57:43.295Z",
+    "end": "2025-03-27T04:58:19.688Z",
+    "duration": 36393,
+    "testsRegistered": 12,
+    "passPercent": 91.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d0ef102d-97f6-440c-abd6-8c8db0883a65",
+      "title": "",
+      "fullFile": "cypress\\e2e\\SPMS\\spms_005.cy.js",
+      "file": "cypress\\e2e\\SPMS\\spms_005.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b1e5253b-7b21-4bf7-9f5b-26d2112ee9d7",
+          "title": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "3349ed4c-bc0d-4da4-a0ae-2762dc21cfa2",
+              "title": "การแสดงผลหน้าจัดการสิทธิ์โปรเจกต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_05_001 ตรวจสอบการแสดงผลองค์ประกอบหลักบนหน้าจัดการสิทธิ์โปรเจกต์",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การแสดงผลหน้าจัดการสิทธิ์โปรเจกต์ TS_SPMS_05_001 ตรวจสอบการแสดงผลองค์ประกอบหลักบนหน้าจัดการสิทธิ์โปรเจกต์",
+                  "timedOut": null,
+                  "duration": 3328,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่ามีองค์ประกอบหลักที่จำเป็นปรากฏบนหน้า\ncy.get('[data-cy=\"project-permissions-page\"]').should(\"exist\");\ncy.get('[data-cy=\"page-title\"]').should(\"contain\", \"จัดการสิทธิ์โปรเจกต์\");\ncy.get('[data-cy=\"project-name\"]').should(\"contain\", mockProject.name);\ncy.get('[data-cy=\"back-button\"]').should(\"exist\");\ncy.get('[data-cy=\"members-section-title\"]').should(\"contain\", \"รายชื่อสมาชิก\");\ncy.get('[data-cy=\"add-member-button\"]').should(\"exist\");\ncy.get('[data-cy=\"members-table-container\"]').should(\"exist\");\ncy.get('[data-cy=\"info-section-title\"]').should(\"contain\", \"ข้อมูลเกี่ยวกับบทบาทในโปรเจกต์\");",
+                  "err": {},
+                  "uuid": "c14238b1-550e-4bf6-99e7-cdc4dfe66854",
+                  "parentUUID": "3349ed4c-bc0d-4da4-a0ae-2762dc21cfa2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_05_002 ตรวจสอบการทำงานของปุ่มกลับไปหน้ารายละเอียดโปรเจกต์",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การแสดงผลหน้าจัดการสิทธิ์โปรเจกต์ TS_SPMS_05_002 ตรวจสอบการทำงานของปุ่มกลับไปหน้ารายละเอียดโปรเจกต์",
+                  "timedOut": null,
+                  "duration": 2559,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มกลับไปหน้ารายละเอียดโปรเจกต์\ncy.get('[data-cy=\"back-button\"]').click();\n// ตรวจสอบว่าได้กลับไปยังหน้ารายละเอียดโปรเจกต์\ncy.url().should(\"include\", `/projects/${mockProject.project_id}`);\ncy.url().should(\"not.include\", \"/permissions\");",
+                  "err": {},
+                  "uuid": "d3e214e5-2d1d-4b79-8d03-88d02d34b720",
+                  "parentUUID": "3349ed4c-bc0d-4da4-a0ae-2762dc21cfa2",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_05_003 ตรวจสอบการแสดงตารางรายชื่อสมาชิกและข้อมูลที่เกี่ยวข้อง",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การแสดงผลหน้าจัดการสิทธิ์โปรเจกต์ TS_SPMS_05_003 ตรวจสอบการแสดงตารางรายชื่อสมาชิกและข้อมูลที่เกี่ยวข้อง",
+                  "timedOut": null,
+                  "duration": 2413,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่าตารางรายชื่อสมาชิกมีคอลัมน์ที่จำเป็น\ncy.get('[data-cy=\"members-table-container\"] thead tr th').should($ths => {\n  expect($ths).to.contain.text(\"ชื่อผู้ใช้\");\n  expect($ths).to.contain.text(\"บทบาทในโปรเจกต์\");\n  expect($ths).to.contain.text(\"บทบาทในระบบ\");\n  expect($ths).to.contain.text(\"เพิ่มเมื่อ\");\n  expect($ths).to.contain.text(\"เพิ่มโดย\");\n  expect($ths).to.contain.text(\"จัดการ\");\n});\n// ตรวจสอบว่ามีข้อมูลสมาชิกอย่างน้อย 1 รายการ (หรือข้อความว่าไม่มีข้อมูล)\ncy.get('[data-cy=\"members-table-container\"] tbody tr').should(\"have.length.at.least\", 1);",
+                  "err": {},
+                  "uuid": "20b16887-f37e-443f-9e13-81ceb8d16220",
+                  "parentUUID": "3349ed4c-bc0d-4da4-a0ae-2762dc21cfa2",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c14238b1-550e-4bf6-99e7-cdc4dfe66854",
+                "d3e214e5-2d1d-4b79-8d03-88d02d34b720",
+                "20b16887-f37e-443f-9e13-81ceb8d16220"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8300,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "116b83d0-d4fb-4e4a-8342-2fde28789f6a",
+              "title": "การเพิ่มสมาชิกในโปรเจกต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_05_004 ตรวจสอบการเปิดและปิดฟอร์มเพิ่มสมาชิก",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การเพิ่มสมาชิกในโปรเจกต์ TS_SPMS_05_004 ตรวจสอบการเปิดและปิดฟอร์มเพิ่มสมาชิก",
+                  "timedOut": null,
+                  "duration": 2463,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเพิ่มสมาชิก\ncy.get('[data-cy=\"add-member-button\"]').click();\n// ตรวจสอบว่าฟอร์มเพิ่มสมาชิกปรากฏ\ncy.get('[data-cy=\"add-member-form\"]').should(\"be.visible\");\n// คลิกปุ่มปิดฟอร์ม\ncy.get('[data-cy=\"close-add-member-form\"]').click();\n// ตรวจสอบว่าฟอร์มเพิ่มสมาชิกถูกซ่อน\ncy.get('[data-cy=\"add-member-form\"]').should(\"not.exist\");",
+                  "err": {},
+                  "uuid": "98341e45-d602-4de4-a96e-931a6ab92ef2",
+                  "parentUUID": "116b83d0-d4fb-4e4a-8342-2fde28789f6a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_05_005 ตรวจสอบการเพิ่มสมาชิกใหม่ในโปรเจกต์",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การเพิ่มสมาชิกในโปรเจกต์ TS_SPMS_05_005 ตรวจสอบการเพิ่มสมาชิกใหม่ในโปรเจกต์",
+                  "timedOut": null,
+                  "duration": 7179,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเพิ่มสมาชิก\ncy.get('[data-cy=\"add-member-button\"]').click();\n// เลือกผู้ใช้\ncy.get('[data-cy=\"user-select\"]').select(newMemberData.userId);\n// ตรวจสอบว่าปุ่มเลือกบทบาทปรากฏหรือไม่ (ขึ้นอยู่กับบทบาทของผู้ใช้ที่ทดสอบ)\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"role-select\"]').length > 0) {\n    // กรณีที่มี role-select (Admin)\n    cy.get('[data-cy=\"role-select\"]').select(newMemberData.role);\n  } else if ($body.find('[data-cy=\"role-readonly\"]').length > 0) {\n    // กรณีที่มี role-readonly (Product Owner)\n    cy.get('[data-cy=\"role-readonly\"]').should(\"have.value\", \"Tester\");\n  }\n});\n// คลิกปุ่มยืนยันการเพิ่มสมาชิก\ncy.get('[data-cy=\"submit-add-member\"]').click();\n// ตรวจสอบว่าฟอร์มเพิ่มสมาชิกถูกซ่อน (แสดงว่าการเพิ่มสำเร็จ)\ncy.get('[data-cy=\"add-member-form\"]').should(\"not.exist\");\n// ตรวจสอบว่าไม่มีข้อความแจ้งเตือนความผิดพลาด\ncy.get('[data-cy=\"error-message\"]').should(\"not.exist\");\n// ตรวจสอบว่ามีชื่อสมาชิกใหม่ในตาราง (สมมติว่ามีการแสดงชื่อของสมาชิกที่เพิ่ม)\n// หมายเหตุ: ในการทดสอบจริง คุณต้องรู้ชื่อของสมาชิกที่เพิ่ม\n// cy.get('[data-cy=\"members-table-container\"] tbody').should('contain', 'ชื่อสมาชิกที่เพิ่ม');\n// หรืออาจตรวจสอบจำนวนสมาชิกในตารางที่เพิ่มขึ้น\ncy.get('[data-cy=\"members-table-container\"] tbody tr').should(\"have.length.at.least\", 1);",
+                  "err": {
+                    "message": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `2`\n\nhttps://on.cypress.io/select",
+                    "estack": "CypressError: Timed out retrying after 4000ms: `cy.select()` failed because it could not find a single `<option>` with value, index, or text matching: `2`\n\nhttps://on.cypress.io/select\n    at getOptions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:113186:72)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at retryOptions (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:113218:70)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise.attempt.Promise.try (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:4285:29)\n    at whenStable (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142849:68)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142790:14)\n    at tryCatcher (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1777:23)\n    at Promise._settlePromiseFromHandler (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1489:31)\n    at Promise._settlePromise (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1546:18)\n    at Promise._settlePromise0 (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1591:10)\n    at Promise._settlePromises (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1671:18)\n    at Promise._fulfill (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:1615:18)\n    at <unknown> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:5420:46)\nFrom Your Spec Code:\n    at captureUserInvocationStack (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138199:94)\n    at Assertion.assert (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138227:9)\n    at Assertion.<anonymous> (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:138169:25)\n    at Assertion.overwritingPropertyGetter (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77985:37)\nat Reflect.get (<anonymous>)\n    at Object.proxyGetter [as get] (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:77851:22)\n    at exists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142048:26)\n    at elExists (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142063:10)\n    at ensureExistence (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142244:22)\n    at onFailFn (https://spms-project.vercel.app/__cypress/runner/cypress_runner.js:142273:53)",
+                    "diff": null
+                  },
+                  "uuid": "d0162ad5-628a-4402-b29d-f5e3bf6beb6c",
+                  "parentUUID": "116b83d0-d4fb-4e4a-8342-2fde28789f6a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_05_006 ตรวจสอบการแสดงข้อความเตือนเมื่อเพิ่มสมาชิกโดยไม่เลือกผู้ใช้",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การเพิ่มสมาชิกในโปรเจกต์ TS_SPMS_05_006 ตรวจสอบการแสดงข้อความเตือนเมื่อเพิ่มสมาชิกโดยไม่เลือกผู้ใช้",
+                  "timedOut": null,
+                  "duration": 2766,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเพิ่มสมาชิก\ncy.get('[data-cy=\"add-member-button\"]').click();\n// คลิกปุ่มยืนยันการเพิ่มสมาชิกโดยไม่เลือกผู้ใช้\ncy.get('[data-cy=\"submit-add-member\"]').click();\n// ตรวจสอบว่ามีข้อความแจ้งเตือน\ncy.get('[data-cy=\"error-message\"]').should(\"exist\");\ncy.get('[data-cy=\"error-message\"]').should(\"contain\", \"กรุณาเลือกผู้ใช้\");",
+                  "err": {},
+                  "uuid": "5d3bdab0-b391-4388-8a9a-043fed9a3ee0",
+                  "parentUUID": "116b83d0-d4fb-4e4a-8342-2fde28789f6a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "98341e45-d602-4de4-a96e-931a6ab92ef2",
+                "5d3bdab0-b391-4388-8a9a-043fed9a3ee0"
+              ],
+              "failures": [
+                "d0162ad5-628a-4402-b29d-f5e3bf6beb6c"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 12408,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "3a473edf-1102-4023-80b6-0035cf8b215f",
+              "title": "การลบสมาชิกออกจากโปรเจกต์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_05_007 ตรวจสอบการแสดง modal ยืนยันการลบสมาชิก",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การลบสมาชิกออกจากโปรเจกต์ TS_SPMS_05_007 ตรวจสอบการแสดง modal ยืนยันการลบสมาชิก",
+                  "timedOut": null,
+                  "duration": 2417,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มลบสมาชิกของรายการแรก (ถ้ามี)\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"remove-member-button\"]').length > 0) {\n    cy.get('[data-cy=\"remove-member-button\"]').first().click();\n    // ตรวจสอบว่า modal ยืนยันการลบปรากฏ\n    cy.get('[data-cy=\"delete-modal-cancel\"]').should(\"exist\");\n    cy.get('[data-cy=\"delete-modal-confirm\"]').should(\"exist\");\n  } else {\n    // ถ้าไม่มีปุ่มลบสมาชิก ให้ข้ามการทดสอบนี้\n    cy.log(\"ไม่พบปุ่มลบสมาชิก อาจเป็นเพราะไม่มีสมาชิกในโปรเจกต์ หรือผู้ใช้ไม่มีสิทธิ์ลบสมาชิก\");\n  }\n});",
+                  "err": {},
+                  "uuid": "f72c8b27-fd56-4389-8465-387e5ee655a5",
+                  "parentUUID": "3a473edf-1102-4023-80b6-0035cf8b215f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_05_008 ตรวจสอบการยกเลิกการลบสมาชิก",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การลบสมาชิกออกจากโปรเจกต์ TS_SPMS_05_008 ตรวจสอบการยกเลิกการลบสมาชิก",
+                  "timedOut": null,
+                  "duration": 2322,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มลบสมาชิกของรายการแรก (ถ้ามี)\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"remove-member-button\"]').length > 0) {\n    // บันทึกจำนวนสมาชิกก่อนการลบ\n    const memberCountBefore = Cypress.$('[data-cy=\"members-table-container\"] tbody tr').length;\n    cy.get('[data-cy=\"remove-member-button\"]').first().click();\n    // คลิกปุ่มยกเลิกการลบสมาชิก\n    cy.get('[data-cy=\"delete-modal-cancel\"]').click();\n    // ตรวจสอบว่า modal ถูกปิด\n    cy.get('[data-cy=\"delete-modal-cancel\"]').should(\"not.exist\");\n    // ตรวจสอบว่าจำนวนสมาชิกไม่เปลี่ยนแปลง\n    cy.get('[data-cy=\"members-table-container\"] tbody tr').should(\"have.length\", memberCountBefore);\n  } else {\n    // ถ้าไม่มีปุ่มลบสมาชิก ให้ข้ามการทดสอบนี้\n    cy.log(\"ไม่พบปุ่มลบสมาชิก อาจเป็นเพราะไม่มีสมาชิกในโปรเจกต์ หรือผู้ใช้ไม่มีสิทธิ์ลบสมาชิก\");\n  }\n});",
+                  "err": {},
+                  "uuid": "b1411dbb-8a6c-4055-be36-ff303bd4f9f6",
+                  "parentUUID": "3a473edf-1102-4023-80b6-0035cf8b215f",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_05_009 ตรวจสอบการลบสมาชิกออกจากโปรเจกต์สำเร็จ",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การลบสมาชิกออกจากโปรเจกต์ TS_SPMS_05_009 ตรวจสอบการลบสมาชิกออกจากโปรเจกต์สำเร็จ",
+                  "timedOut": null,
+                  "duration": 2376,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มลบสมาชิกของรายการแรก (ถ้ามี)\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"remove-member-button\"]').length > 0) {\n    // บันทึกจำนวนสมาชิกก่อนการลบ\n    cy.get('[data-cy=\"members-table-container\"] tbody tr').then($rows => {\n      const memberCountBefore = $rows.length;\n      // คลิกปุ่มลบสมาชิก\n      cy.get('[data-cy=\"remove-member-button\"]').first().click();\n      // คลิกปุ่มยืนยันการลบสมาชิก\n      cy.get('[data-cy=\"delete-modal-confirm\"]').click();\n      // ตรวจสอบว่า modal ถูกปิด\n      cy.get('[data-cy=\"delete-modal-confirm\"]').should(\"not.exist\");\n      // ตรวจสอบว่าไม่มีข้อความแจ้งเตือนความผิดพลาด\n      cy.get('[data-cy=\"error-message\"]').should(\"not.exist\");\n      // ตรวจสอบว่าจำนวนสมาชิกลดลง 1 คน (เฉพาะในกรณีที่การลบสำเร็จ)\n      // หมายเหตุ: อาจต้องรอการโหลดข้อมูลใหม่\n      cy.wait(1000); // รอให้ข้อมูลโหลดใหม่\n      // ตรวจสอบจำนวนสมาชิกหลังการลบ\n      if (memberCountBefore > 1) {\n        // ถ้ามีสมาชิกมากกว่า 1 คน จำนวนสมาชิกต้องลดลง\n        cy.get('[data-cy=\"members-table-container\"] tbody tr').should(\"have.length\", memberCountBefore - 1);\n      } else {\n        // ถ้ามีสมาชิกเพียง 1 คน หลังจากลบอาจแสดงข้อความว่าไม่มีข้อมูล\n        cy.get('[data-cy=\"members-table-container\"] tbody').should(\"contain\", \"ไม่พบข้อมูลสมาชิก\");\n      }\n    });\n  } else {\n    // ถ้าไม่มีปุ่มลบสมาชิก ให้ข้ามการทดสอบนี้\n    cy.log(\"ไม่พบปุ่มลบสมาชิก อาจเป็นเพราะไม่มีสมาชิกในโปรเจกต์ หรือผู้ใช้ไม่มีสิทธิ์ลบสมาชิก\");\n  }\n});",
+                  "err": {},
+                  "uuid": "7b39c4f0-cb54-456b-9408-4208668f7f95",
+                  "parentUUID": "3a473edf-1102-4023-80b6-0035cf8b215f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f72c8b27-fd56-4389-8465-387e5ee655a5",
+                "b1411dbb-8a6c-4055-be36-ff303bd4f9f6",
+                "7b39c4f0-cb54-456b-9408-4208668f7f95"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 7115,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "e22f1ff6-4729-4582-883c-908c69a162a4",
+              "title": "การจัดการสิทธิ์ตามบทบาทผู้ใช้",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_05_010 ตรวจสอบการแสดงข้อมูลบทบาทในโปรเจกต์ที่เหมาะสม",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การจัดการสิทธิ์ตามบทบาทผู้ใช้ TS_SPMS_05_010 ตรวจสอบการแสดงข้อมูลบทบาทในโปรเจกต์ที่เหมาะสม",
+                  "timedOut": null,
+                  "duration": 2403,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// ตรวจสอบว่ามีการแสดงข้อมูลเกี่ยวกับบทบาทในโปรเจกต์\ncy.get('[data-cy=\"info-section-title\"]').should(\"contain\", \"ข้อมูลเกี่ยวกับบทบาทในโปรเจกต์\");",
+                  "err": {},
+                  "uuid": "ac5891c4-6e89-4f24-a2a5-bbf9c5029662",
+                  "parentUUID": "e22f1ff6-4729-4582-883c-908c69a162a4",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "TS_SPMS_05_011 ตรวจสอบการแสดงตัวเลือกบทบาทตามสิทธิ์ของผู้ใช้",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ การจัดการสิทธิ์ตามบทบาทผู้ใช้ TS_SPMS_05_011 ตรวจสอบการแสดงตัวเลือกบทบาทตามสิทธิ์ของผู้ใช้",
+                  "timedOut": null,
+                  "duration": 3136,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// คลิกปุ่มเพิ่มสมาชิก\ncy.get('[data-cy=\"add-member-button\"]').click();\n// ตรวจสอบตัวเลือกบทบาทตามสิทธิ์ของผู้ใช้\ncy.get(\"body\").then($body => {\n  if ($body.find('[data-cy=\"role-select\"]').length > 0) {\n    // กรณีเป็น Admin ต้องสามารถเลือกได้ทั้ง Product Owner และ Tester\n    cy.get('[data-cy=\"role-select\"] option').should($options => {\n      expect($options).to.have.length.at.least(2);\n      expect($options.eq(0)).to.contain(\"Product Owner\");\n      expect($options.eq(1)).to.contain(\"Tester\");\n    });\n  } else if ($body.find('[data-cy=\"role-readonly\"]').length > 0) {\n    // กรณีเป็น Product Owner บทบาทถูกกำหนดเป็น Tester เท่านั้น\n    cy.get('[data-cy=\"role-readonly\"]').should(\"have.value\", \"Tester\");\n  }\n});\n// ปิดฟอร์มเพิ่มสมาชิก\ncy.get('[data-cy=\"close-add-member-form\"]').click();",
+                  "err": {},
+                  "uuid": "81012ae1-c5a1-4dbb-b7bf-819f76d9223f",
+                  "parentUUID": "e22f1ff6-4729-4582-883c-908c69a162a4",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ac5891c4-6e89-4f24-a2a5-bbf9c5029662",
+                "81012ae1-c5a1-4dbb-b7bf-819f76d9223f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 5539,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "f39ab985-525a-452b-9d46-a4e815a66d41",
+              "title": "กรณีผู้ใช้ไม่มีสิทธิ์",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "TS_SPMS_05_012 ตรวจสอบการแสดงข้อความแจ้งเตือนเมื่อผู้ใช้ไม่มีสิทธิ์จัดการสมาชิก",
+                  "fullTitle": "ทดสอบหน้าจัดการสิทธิ์โปรเจกต์ กรณีผู้ใช้ไม่มีสิทธิ์ TS_SPMS_05_012 ตรวจสอบการแสดงข้อความแจ้งเตือนเมื่อผู้ใช้ไม่มีสิทธิ์จัดการสมาชิก",
+                  "timedOut": null,
+                  "duration": 2504,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// จำลองกรณีที่ผู้ใช้ไม่มีสิทธิ์ (ในการทดสอบจริงอาจต้องใช้บัญชีอื่น)\n// สามารถทำได้โดยการ mock API response หรือใช้ UI ที่แสดงข้อความแจ้งเตือน\n// สมมติว่าเราสามารถจำลองการตอบกลับจาก API ได้\ncy.intercept(\"GET\", `**/api/project-members/${mockProject.project_id}`, {\n  statusCode: 200,\n  body: []\n}).as(\"getMembers\");\ncy.intercept(\"GET\", `**/api/projects/${mockProject.project_id}`, {\n  statusCode: 200,\n  body: _objectSpread(_objectSpread({}, mockProject), {}, {\n    user_role: \"Tester\"\n  }) // สมมติว่าผู้ใช้มีบทบาทเป็น Tester ซึ่งไม่มีสิทธิ์จัดการสมาชิก\n}).as(\"getProject\");\n// รีโหลดหน้า\ncy.visit(`/projects/${mockProject.project_id}/permissions`);\n// ตรวจสอบว่ามีข้อความแจ้งเตือนปรากฏ\ncy.contains(\"ไม่พบข้อมูลสมาชิกในโปรเจกต์นี้\").should(\"be.visible\");",
+                  "err": {},
+                  "uuid": "8b86ece0-f195-44f4-b2da-28d4c00779e5",
+                  "parentUUID": "f39ab985-525a-452b-9d46-a4e815a66d41",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "8b86ece0-f195-44f4-b2da-28d4c00779e5"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 2504,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

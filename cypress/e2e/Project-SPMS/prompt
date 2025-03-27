@@ -1,0 +1,119 @@
+describe('Sprints Page Tests', () => {
+  beforeEach(() => {
+    // เริ่มต้นที่หน้าเข้าสู่ระบบและทำการล็อกอิน
+    cy.visit("/login");
+    cy.get('[data-cy="login-email"]').type("test005@tester.com");
+    cy.get('[data-cy="login-password"]').type("123456");
+    cy.get('[data-cy="login-submit"]').click();
+    
+    // ตรวจสอบว่าเข้าสู่หน้า dashboard หรือไม่
+    cy.url().should("include", "/dashboard");
+    // กด navbar เพื่อไปหน้า สปรินต์
+    cy.get('[data-cy="nav-item-สปรินต์"]').click();
+  });
+
+ทำ automated หน้า sprints จาก ไฟล์ sprints ที่ให้ไป
+แต่ละ it ต้องเป็น TS_SPMS_04_XXX ตามด้วยว่าทำอะไรที่เป็นภาษาไทย
+
+describe('Sprints Page Tests', () => {
+  beforeEach(() => {
+    // เริ่มต้นที่หน้าเข้าสู่ระบบและทำการล็อกอิน
+    cy.visit("/login");
+    cy.get('[data-cy="login-email"]').type("test005@tester.com");
+    cy.get('[data-cy="login-password"]').type("123456");
+    cy.get('[data-cy="login-submit"]').click();
+    
+    // ตรวจสอบว่าเข้าสู่หน้า dashboard หรือไม่
+    cy.url().should("include", "/dashboard");
+    // กด navbar เพื่อไปหน้า ไฟล์ทดสอบ
+    cy.get('[data-cy="nav-item-ไฟล์ทดสอบ"]').click();
+  });
+
+ทำ automated หน้า testfiles จาก ไฟล์ testfiles ที่ให้ไป
+แต่ละ it ต้องเป็น TS_SPMS_05_XXX ตามด้วยว่าทำอะไรที่เป็นภาษาไทย
+
+describe('users Page Tests', () => {
+  beforeEach(() => {
+    // เริ่มต้นที่หน้าเข้าสู่ระบบและทำการล็อกอิน
+    cy.visit("/login");
+    cy.get('[data-cy="login-email"]').type("test005@tester.com");
+    cy.get('[data-cy="login-password"]').type("123456");
+    cy.get('[data-cy="login-submit"]').click();
+    
+    // ตรวจสอบว่าเข้าสู่หน้า dashboard หรือไม่
+    cy.url().should("include", "/dashboard");
+    // กด navbar เพื่อไปหน้า ผู้ใช้งาน
+    cy.get('[data-cy="more-menu-button"]').click();
+    cy.get('[data-cy="more-menu-item-ผู้ใช้งาน"]').click();
+  });
+
+ทำ automated หน้า users จาก ไฟล์ users ที่ให้ไป
+แต่ละ it ต้องเป็น TS_SPMS_06_XXX ตามด้วยว่าทำอะไรที่เป็นภาษาไทย
+
+describe('actionlogs Page Tests', () => {
+  beforeEach(() => {
+    // เริ่มต้นที่หน้าเข้าสู่ระบบและทำการล็อกอิน
+    cy.visit("/login");
+    cy.get('[data-cy="login-email"]').type("test005@tester.com");
+    cy.get('[data-cy="login-password"]').type("123456");
+    cy.get('[data-cy="login-submit"]').click();
+    
+    // ตรวจสอบว่าเข้าสู่หน้า dashboard หรือไม่
+    cy.url().should("include", "/dashboard");
+    // กด navbar เพื่อไปหน้า บันทึกการดำเนินการ
+    cy.get('[data-cy="more-menu-button"]').click();
+    cy.get('[data-cy="more-menu-item-บันทึกการดำเนินการ"]').click();
+  });
+
+ทำ automated หน้า actionlogs จาก ไฟล์ actionlogs ที่ให้ไป
+แต่ละ it ต้องเป็น TS_SPMS_07_XXX ตามด้วยว่าทำอะไรที่เป็นภาษาไทย
+
+describe('profile Page Tests', () => {
+  beforeEach(() => {
+    // เริ่มต้นที่หน้าเข้าสู่ระบบและทำการล็อกอิน
+    cy.visit("/login");
+    cy.get('[data-cy="login-email"]').type("test005@tester.com");
+    cy.get('[data-cy="login-password"]').type("123456");
+    cy.get('[data-cy="login-submit"]').click();
+    
+    // ตรวจสอบว่าเข้าสู่หน้า dashboard หรือไม่
+    cy.url().should("include", "/dashboard");
+    // กด navbar เพื่อไปหน้า โปรไฟล์
+    cy.get('[data-cy="user-menu-button"]').click();
+    cy.get('[data-cy="profile-menu-item-]').click();
+  });
+
+ทำ automated หน้า profile จาก ไฟล์ profile ที่ให้ไป
+แต่ละ it ต้องเป็น TS_SPMS_08_XXX ตามด้วยว่าทำอะไรที่เป็นภาษาไทย
+
+describe('test-dashboard Page Tests', () => {
+  beforeEach(() => {
+    // เริ่มต้นที่หน้าเข้าสู่ระบบและทำการล็อกอิน
+    cy.visit("/login");
+    cy.get('[data-cy="login-email"]').type("test005@tester.com");
+    cy.get('[data-cy="login-password"]').type("123456");
+    cy.get('[data-cy="login-submit"]').click();
+    
+    // ตรวจสอบว่าเข้าสู่หน้า dashboard หรือไม่
+    cy.url().should("include", "/dashboard");
+    // กด navbar เพื่อไปหน้า โปรไฟล์
+    cy.get('[data-cy="nav-item-ผลการทดสอบ"]').click();
+  });
+
+ทำ automated หน้า testdashboard จาก ไฟล์ testdashboard ที่ให้ไป
+แต่ละ it ต้องเป็น TS_SPMS_09_XXX ตามด้วยว่าทำอะไรที่เป็นภาษาไทย
+
+describe('navbar Tests', () => {
+  beforeEach(() => {
+    // เริ่มต้นที่หน้าเข้าสู่ระบบและทำการล็อกอิน
+    cy.visit("/login");
+    cy.get('[data-cy="login-email"]').type("test005@tester.com");
+    cy.get('[data-cy="login-password"]').type("123456");
+    cy.get('[data-cy="login-submit"]').click();
+    
+    // ตรวจสอบว่าเข้าสู่หน้า dashboard หรือไม่
+    cy.url().should("include", "/dashboard");
+  });
+
+ทำ automated หน้า navbar จาก ไฟล์ navbar ที่ให้ไป
+แต่ละ it ต้องเป็น TS_SPMS_10_XXX ตามด้วยว่าทำอะไรที่เป็นภาษาไทย

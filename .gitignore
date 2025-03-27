@@ -23,3 +23,10 @@ debug.log
 
 # Test coverage
 coverage/
+
+# Ignore all image files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg

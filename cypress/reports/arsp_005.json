@@ -1,0 +1,248 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-03-27T14:44:14.099Z",
+    "end": "2025-03-27T14:44:22.477Z",
+    "duration": 8378,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5af12d30-1d26-49c0-9737-da9104546050",
+      "title": "",
+      "fullFile": "cypress\\e2e\\ARSP\\arsp_005.cy.js",
+      "file": "cypress\\e2e\\ARSP\\arsp_005.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+          "title": "การทดสอบการแสดงผลแบบ Responsive",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TS_ARSP_05_001 ทดสอบการแสดงผลบนอุปกรณ์ขนาดเล็ก (โทรศัพท์มือถือ)",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_001 ทดสอบการแสดงผลบนอุปกรณ์ขนาดเล็ก (โทรศัพท์มือถือ)",
+              "timedOut": null,
+              "duration": 984,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// ตั้งค่าวิวพอร์ตเป็นขนาดโทรศัพท์มือถือ (iPhone X)\ncy.viewport(375, 812);\ncy.visit(\"/\");\n// ตรวจสอบการแสดงส่วนหัว\ncy.contains(\"คำนวณค่าขนส่งจีน-ไทย AriyayaPreorder\").should(\"be.visible\");\n// ตรวจสอบว่าปุ่มคำนวณค่าขนส่งแสดงแบบย่อสำหรับอุปกรณ์มือถือ\ncy.get('[data-cy=\"calculate-button\"]').find(\".sm\\\\:hidden\").should(\"be.visible\");\ncy.get('[data-cy=\"calculate-button\"]').find(\".sm\\\\:inline\").should(\"not.be.visible\");\n// ตรวจสอบว่าช่องกรอกข้อมูลอยู่ในแนวตั้ง (แต่ละช่องอยู่ด้านล่างกัน)\n// โดยตรวจสอบจากความกว้างของช่องกรอกที่ควรใกล้เคียงกับความกว้างของคอนเทนเนอร์\ncy.get('[data-cy=\"width-input\"]').invoke(\"outerWidth\").should(\"be.greaterThan\", 80);",
+              "err": {},
+              "uuid": "0a59f96d-a97f-4a54-b8b2-a9db4eeef252",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TS_ARSP_05_002 ทดสอบการแสดงผลบนอุปกรณ์ขนาดกลาง (แท็บเล็ต)",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_002 ทดสอบการแสดงผลบนอุปกรณ์ขนาดกลาง (แท็บเล็ต)",
+              "timedOut": null,
+              "duration": 146,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// ตั้งค่าวิวพอร์ตเป็นขนาดแท็บเล็ต (iPad)\ncy.viewport(768, 1024);\ncy.visit(\"/\");\n// ตรวจสอบการแสดงส่วนหัว\ncy.contains(\"คำนวณค่าขนส่งจีน-ไทย AriyayaPreorder\").should(\"be.visible\");\n// ตรวจสอบว่าปุ่มคำนวณค่าขนส่งแสดงข้อความเต็มสำหรับอุปกรณ์ขนาดกลาง\ncy.get('[data-cy=\"calculate-button\"]').find(\".sm\\\\:inline\").should(\"be.visible\");\ncy.get('[data-cy=\"calculate-button\"]').contains(\"คำนวณค่าขนส่ง\").should(\"be.visible\");\n// ตรวจสอบว่าส่วนของอัตราค่าขนส่งแสดงในแนวนอน (2 คอลัมน์) บนแท็บเล็ต\ncy.get('[data-cy=\"company-rates-section\"]').find(\".sm\\\\:grid-cols-3\").should(\"exist\");",
+              "err": {},
+              "uuid": "1eb11b71-ef7b-4495-9d24-d1e78faac46a",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TS_ARSP_05_003 ทดสอบการแสดงผลบนอุปกรณ์ขนาดใหญ่ (เดสก์ท็อป)",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_003 ทดสอบการแสดงผลบนอุปกรณ์ขนาดใหญ่ (เดสก์ท็อป)",
+              "timedOut": null,
+              "duration": 924,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// ตั้งค่าวิวพอร์ตเป็นขนาดเดสก์ท็อป\ncy.viewport(1280, 800);\ncy.visit(\"/\");\n// ตรวจสอบว่าส่วนสุดท้ายของหน้าเว็บ (ส่วนติดต่อ) แสดงเป็น grid 3 คอลัมน์\ncy.get('[data-cy=\"contact-section\"]').find(\".sm\\\\:grid-cols-3\").should(\"exist\");\n// ตรวจสอบว่าผลลัพธ์การคำนวณ (เมื่อคำนวณแล้ว) แสดงเป็น 2 คอลัมน์\ncy.get('[data-cy=\"width-input\"]').type(\"50\");\ncy.get('[data-cy=\"length-input\"]').type(\"50\");\ncy.get('[data-cy=\"height-input\"]').type(\"50\");\ncy.get('[data-cy=\"weight-input\"]').type(\"20\");\ncy.get('[data-cy=\"calculate-button\"]').click();\ncy.get('[data-cy=\"calculation-result\"]').find(\".md\\\\:grid-cols-2\").should(\"exist\");",
+              "err": {},
+              "uuid": "43ee958d-7e65-4a57-a5f3-da2ef3230aa1",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TS_ARSP_05_004 ทดสอบการเปลี่ยนขนาดวิวพอร์ตจากเล็กไปใหญ่",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_004 ทดสอบการเปลี่ยนขนาดวิวพอร์ตจากเล็กไปใหญ่",
+              "timedOut": null,
+              "duration": 4439,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// เริ่มจากขนาดเล็ก (โทรศัพท์มือถือ)\ncy.viewport(375, 667);\ncy.visit(\"/\");\n// ตรวจสอบการแสดงผลบนมือถือ\ncy.get('[data-cy=\"calculate-button\"]').contains(\"คำนวณ\").should(\"be.visible\");\n// เปลี่ยนเป็นขนาดใหญ่ (เดสก์ท็อป)\ncy.viewport(1280, 800);\n// ตรวจสอบว่าการแสดงผลเปลี่ยนเป็นเดสก์ท็อป\ncy.get('[data-cy=\"calculate-button\"]').contains(\"คำนวณค่าขนส่ง\").should(\"be.visible\");",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<span.hidden.sm:inline>' to be 'visible'\n\nThis element `<span.hidden.sm:inline>` is not visible because it has CSS property: `display: none`",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<span.hidden.sm:inline>' to be 'visible'\n\nThis element `<span.hidden.sm:inline>` is not visible because it has CSS property: `display: none`\n    at Context.eval (webpack://cypress-test-project/./cypress/e2e/ARSP/arsp_005.cy.js:77:7)",
+                "diff": null
+              },
+              "uuid": "4f43fac3-ff46-4cef-9fec-7b0c8fcd544b",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TS_ARSP_05_005 ทดสอบส่วนผลลัพธ์การคำนวณบนอุปกรณ์ขนาดเล็ก",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_005 ทดสอบส่วนผลลัพธ์การคำนวณบนอุปกรณ์ขนาดเล็ก",
+              "timedOut": null,
+              "duration": 883,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(375, 667);\ncy.visit(\"/\");\n// กรอกข้อมูลและคำนวณ\ncy.get('[data-cy=\"width-input\"]').type(\"50\");\ncy.get('[data-cy=\"length-input\"]').type(\"50\");\ncy.get('[data-cy=\"height-input\"]').type(\"50\");\ncy.get('[data-cy=\"weight-input\"]').type(\"20\");\ncy.get('[data-cy=\"calculate-button\"]').click();\n// ตรวจสอบว่าผลลัพธ์แสดงในแนวตั้ง (1 คอลัมน์) บนมือถือ\ncy.get('[data-cy=\"calculation-result\"]').find(\".grid-cols-1\").should(\"exist\");\n// ตรวจสอบว่าส่วนแสดงค่าขนส่งทั้งหมดแสดงผลอย่างถูกต้องบนมือถือ\ncy.get('[data-cy=\"shipping-cost\"]').should(\"be.visible\");",
+              "err": {},
+              "uuid": "421948ea-fe17-4a31-9d2e-a66086bba0ed",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TS_ARSP_05_006 ทดสอบการแสดงผลฟอร์มอัตราต่างๆ บนอุปกรณ์ขนาดกลาง",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_006 ทดสอบการแสดงผลฟอร์มอัตราต่างๆ บนอุปกรณ์ขนาดกลาง",
+              "timedOut": null,
+              "duration": 125,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.viewport(768, 1024);\ncy.visit(\"/\");\n// ตรวจสอบว่าฟอร์มข้อมูลสินค้าแสดงผลอย่างถูกต้อง\ncy.get('[data-cy=\"product-info-section\"]').should(\"be.visible\");\n// ตรวจสอบว่ารูปแบบการคำนวณแสดงในแนวนอนบนแท็บเล็ต\ncy.get('[data-cy=\"calculation-type-section\"]').find(\".sm\\\\:flex-row\").should(\"exist\");\n// ตรวจสอบว่าปุ่มคำนวณและล้างข้อมูลแสดงขนาดใหญ่ขึ้นบนแท็บเล็ต\ncy.get('[data-cy=\"calculate-button\"]').should(\"have.class\", \"sm:py-4\");\ncy.get('[data-cy=\"clear-button\"]').should(\"have.class\", \"sm:py-4\");",
+              "err": {},
+              "uuid": "2d701733-0e38-43f8-aa60-a403b6b0c4ec",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TS_ARSP_05_007 ทดสอบการแสดงข้อมูลอธิบายการคำนวณบนทุกขนาดอุปกรณ์",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_007 ทดสอบการแสดงข้อมูลอธิบายการคำนวณบนทุกขนาดอุปกรณ์",
+              "timedOut": null,
+              "duration": 124,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// ทดสอบบนอุปกรณ์ขนาดเล็ก\ncy.viewport(375, 667);\ncy.visit(\"/\");\ncy.get('[data-cy=\"calculation-info-section\"]').should(\"be.visible\");\n// ทดสอบบนอุปกรณ์ขนาดกลาง\ncy.viewport(768, 1024);\ncy.get('[data-cy=\"calculation-info-section\"]').should(\"be.visible\");\n// ทดสอบบนอุปกรณ์ขนาดใหญ่\ncy.viewport(1280, 800);\ncy.get('[data-cy=\"calculation-info-section\"]').should(\"be.visible\");\n// ตรวจสอบว่าข้อมูลการคำนวณแสดงทุกรายการ\ncy.get('[data-cy=\"calculation-info-section\"]').contains(\"คำนวณจาก (กว้าง × ยาว × สูง) ÷ 10000\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "b56e25a5-d08b-4060-a502-67628bc38481",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "TS_ARSP_05_008 ทดสอบการแสดงผลแจ้งเตือนความผิดพลาดบนอุปกรณ์ขนาดต่างๆ",
+              "fullTitle": "การทดสอบการแสดงผลแบบ Responsive TS_ARSP_05_008 ทดสอบการแสดงผลแจ้งเตือนความผิดพลาดบนอุปกรณ์ขนาดต่างๆ",
+              "timedOut": null,
+              "duration": 561,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// ทดสอบบนอุปกรณ์ขนาดเล็ก\ncy.viewport(375, 667);\ncy.visit(\"/\");\ncy.get('[data-cy=\"calculate-button\"]').click();\ncy.contains(\"กรุณากรอกข้อมูลให้ครบถ้วน\").should(\"be.visible\");\n// ทดสอบบนอุปกรณ์ขนาดกลาง\ncy.viewport(768, 1024);\ncy.visit(\"/\");\ncy.get('[data-cy=\"calculate-button\"]').click();\ncy.contains(\"กรุณากรอกข้อมูลให้ครบถ้วน\").should(\"be.visible\");\n// ทดสอบบนอุปกรณ์ขนาดใหญ่\ncy.viewport(1280, 800);\ncy.visit(\"/\");\ncy.get('[data-cy=\"calculate-button\"]').click();\ncy.contains(\"กรุณากรอกข้อมูลให้ครบถ้วน\").should(\"be.visible\");",
+              "err": {},
+              "uuid": "77b256a2-31b6-41cd-ba28-4bd2dfdc9df0",
+              "parentUUID": "48939af7-11e8-41b8-a8d5-5d67d716c2af",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0a59f96d-a97f-4a54-b8b2-a9db4eeef252",
+            "1eb11b71-ef7b-4495-9d24-d1e78faac46a",
+            "43ee958d-7e65-4a57-a5f3-da2ef3230aa1",
+            "421948ea-fe17-4a31-9d2e-a66086bba0ed",
+            "2d701733-0e38-43f8-aa60-a403b6b0c4ec",
+            "b56e25a5-d08b-4060-a502-67628bc38481",
+            "77b256a2-31b6-41cd-ba28-4bd2dfdc9df0"
+          ],
+          "failures": [
+            "4f43fac3-ff46-4cef-9fec-7b0c8fcd544b"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 8186,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": true,
+        "html": false,
+        "json": true,
+        "reportFilename": "[name]",
+        "reportPageTitle": "Test Report",
+        "charts": true,
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
